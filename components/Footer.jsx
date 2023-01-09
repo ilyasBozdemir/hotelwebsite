@@ -54,7 +54,7 @@ export default function SmallCentered() {
         justify={"center"}
         align={"center"}
       >
-        <>[Güven Otel Logo]</>
+        <Text fontSize={25}>[Güven Otel Logo]</Text>
         <Stack direction={"row"} spacing={6}>
           <Link href={"/"} legacyBehavior>
             <a>Anasayfa</a>

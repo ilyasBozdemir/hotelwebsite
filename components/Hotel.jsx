@@ -1,4 +1,8 @@
-import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import { Link } from "next/link";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
@@ -12,16 +16,35 @@ function Hotel() {
             dayImage={"/images/otel-dis-gunduz.jpeg"}
             nightImage={"/images/otel-dis-gece.jpeg"}
           />
+
           <Text
-            bgGradient="linear(to-l, #FF0060, #FF0080)"
+            bgGradient="linear(to-l, #000, #444)"
             bgClip="text"
-            fontSize="6xl"
+            fontSize="xl"
             fontWeight="extrabold"
             pos={"absolute"}
-            //zIndex={2}
+            zIndex={2}
+            top={15}
+            left={15}
           >
-            Güven Otel
+            [Güven Otel Logo]
           </Text>
+
+          <>
+            <Link href={"/"} legacyBehavior>
+              <a>Anasayfa</a>
+            </Link>
+            <Link href={"/hakkimizda"} legacyBehavior>
+              <a>Hakkımızda</a>
+            </Link>
+            <Link href={"/galeri"} legacyBehavior>
+              <a>Galeri</a>
+            </Link>
+            <Link href={"/iletisim"} legacyBehavior>
+              <a>İletişim</a>
+            </Link>
+          </>
+
         </Box>
       </Box>
     </>
