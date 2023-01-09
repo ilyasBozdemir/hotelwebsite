@@ -4,6 +4,7 @@ import Link from "next/link";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
 import { useState } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 function Hotel() {
   const date = new Date();
@@ -71,7 +72,17 @@ function Hotel() {
                 spacing={3}
                 p={3}
               >
-               
+               <Icon as={FaMapMarkerAlt} fontSize={18}/>
+               <Link
+              href={
+                "https://www.google.com/maps/place/G%C3%BCneyyurt,+70402+G%C3%BCneyyurt%2FErmenek%2FKaraman/@36.6822526,32.7908054,14z/data=!3m1!4b1!4m5!3m4!1s0x14dbe962653d308f:0x467dd49399d0d14a!8m2!3d36.68222!4d32.808315"
+              }
+              legacyBehavior
+            >
+              <a target="_blank" rel="noopener noreferrer">
+                Güneyyurt Kasabası
+              </a>
+            </Link>
               </HStack>
             </HStack>
             <Divider/>
