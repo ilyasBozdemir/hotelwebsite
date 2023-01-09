@@ -10,12 +10,7 @@ import {
   Flex,
   HStack,
 } from "@chakra-ui/react";
-import {
-  FaInstagram,
-  FaMapMarkerAlt,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
 import { ReactNode } from "react";
@@ -79,15 +74,31 @@ export default function SmallCentered() {
           direction={{ base: "column", md: "row" }}
           justify={{ base: "space-between", md: "space-between" }}
         >
-          <HStack >
+          <HStack>
             <Icon as={FaMapMarkerAlt} />
-            <>Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN</>
+
+            <Link
+              href={
+                "https://www.google.com/maps/place/G%C3%BCneyyurt,+70402+G%C3%BCneyyurt%2FErmenek%2FKaraman/@36.6822526,32.7908054,14z/data=!3m1!4b1!4m5!3m4!1s0x14dbe962653d308f:0x467dd49399d0d14a!8m2!3d36.68222!4d32.808315"
+              }
+              legacyBehavior
+            >
+              <a target="_blank" rel="noopener noreferrer">
+                Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN
+              </a>
+            </Link>
           </HStack>
           <HStack>
             <Icon as={BsFillTelephoneFill} />
-            <Link href={"tel:905435403160"} legacyBehavior>
-            <a>0543 540 31 60</a>
-          </Link>
+            <Link href={"tel:+905435403160"} legacyBehavior>
+              <a>0543 540 31 60</a>
+            </Link>
+          </HStack>
+          <HStack>
+            <Icon as={BsFillTelephoneFill} />
+            <Link href={"tel:+905312486322"} legacyBehavior>
+              <a>0531 248 63 22</a>
+            </Link>
           </HStack>
         </Stack>
       </Container>
