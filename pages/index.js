@@ -1,12 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import Hotel from "../components/Hotel";
-import AboutUs from "../components/AboutUs";
-import Footer from "../components/Footer";
-import Link from "next/link";
+
 import { AspectRatio, Box, Flex, Stack } from "@chakra-ui/react";
+import React, { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
+
+const Hotel = React.lazy(() => import("../components/Hotel"));
+const AboutUs = React.lazy(() => import("../components/AboutUs"));
+const Footer = React.lazy(() => import("../components/Footer"));
 
 export default function Home() {
   return (
@@ -18,14 +19,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Hotel />
-        <AboutUs />
-        <>
-          <AspectRatio ratio={16 / 9}>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567723392506!5m2!1sen!2sng" />
-          </AspectRatio>
-        </>
-        <Footer />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Hotel />
+          <AboutUs />
+          <>
+            <AspectRatio ratio={16 / 9}>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d3.375295414770757!3d6.5276316452784755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567723392506!5m2!1sen!2sng" />
+            </AspectRatio>
+          </>
+          <Footer />
+        </Suspense>
       </main>
     </>
   );

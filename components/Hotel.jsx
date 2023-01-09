@@ -18,7 +18,7 @@ function Hotel() {
             fontSize="6xl"
             fontWeight="extrabold"
             pos={"absolute"}
-            zIndex={2}
+            //zIndex={2}
           >
             Güven Otel
           </Text>
