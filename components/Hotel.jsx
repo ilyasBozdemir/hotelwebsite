@@ -1,13 +1,21 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "next/link";
+import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
+
+
 
 function Hotel() {
   return (
     <>
-      <Box pos={"absolute"}>
+      <Box pos={"relative"}>
         <Box>
-          <Image src="/images/otel-dis-gunduz.jpeg" alt="Guven-otel" />
+          <TimeBasedImageTimeBasedImage
+            dayImage={"/images/otel-dis-gunduz.jpeg"}
+            nightImage={"/images/otel-dis-gece.jpeg"}
+          />
         </Box>
+
       </Box>
     </>
   );
