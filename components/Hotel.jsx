@@ -12,15 +12,17 @@ function Hotel() {
             dayImage={"/images/otel-dis-gunduz.jpeg"}
             nightImage={"/images/otel-dis-gece.jpeg"}
           />
+          <Text
+            bgGradient="linear(to-l, #FF0060, #FF0080)"
+            bgClip="text"
+            fontSize="6xl"
+            fontWeight="extrabold"
+            pos={"absolute"}
+            zIndex={2}
+          >
+            Güven Otel
+          </Text>
         </Box>
-        <Text
-          bgGradient="linear(to-l, #FF0060, #FF0080)"
-          bgClip="text"
-          fontSize="6xl"
-          fontWeight="extrabold"
-        >
-          Güven Otel
-        </Text>
       </Box>
     </>
   );
