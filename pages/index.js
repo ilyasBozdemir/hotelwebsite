@@ -2,11 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Hotel from "../components/Hotel";
-
+import AboutUs from "../components/AboutUs";
+import Footer from "../components/Footer";
+import Link from "next/link";
+import { Box, Flex, Stack } from "@chakra-ui/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  
   return (
     <>
       <Head>
@@ -16,7 +18,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Hotel/>
+        <Hotel />
+        <AboutUs />
+        <Footer />
       </main>
     </>
   );

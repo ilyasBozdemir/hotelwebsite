@@ -3,8 +3,6 @@ import React from "react";
 import { Link } from "next/link";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
 
-
-
 function Hotel() {
   return (
     <>
@@ -15,7 +13,14 @@ function Hotel() {
             nightImage={"/images/otel-dis-gece.jpeg"}
           />
         </Box>
-
+        <Text
+          bgGradient="linear(to-l, #FF0060, #FF0080)"
+          bgClip="text"
+          fontSize="6xl"
+          fontWeight="extrabold"
+        >
+          Güven Otel
+        </Text>
       </Box>
     </>
   );
