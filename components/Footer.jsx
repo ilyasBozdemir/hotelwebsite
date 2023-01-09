@@ -13,7 +13,7 @@ import {
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
-import { ReactNode } from "react";
+
 import Link from "next/link";
 
 const SocialButton = ({ children, label, href }) => {
@@ -40,7 +40,7 @@ const SocialButton = ({ children, label, href }) => {
   );
 };
 
-export default function SmallCentered() {
+export default function Footer() {
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
@@ -54,7 +54,13 @@ export default function SmallCentered() {
         justify={"center"}
         align={"center"}
       >
-        <Text fontSize={25}>[Güven Otel Logo]</Text>
+        <Link href={"/"} legacyBehavior>
+            <a>
+            <Text cursor={'pointer'} fontSize="3xl" fontFamily={'Georgia'}>Güven Otel</Text>
+            </a>
+          </Link>
+       
+
         <Stack direction={"row"} spacing={6}>
           <Link href={"/"} legacyBehavior>
             <a>Anasayfa</a>
