@@ -13,7 +13,25 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Güven Otel</title>
+       
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Güven Otel" />
+        <meta name="twitter:description" content="Güven ve huzur ortamında konaklama" />
+        <meta name="twitter:site" content="@Ilyasbzdmr70" />
+
+        <meta name="og:title" content="Güven Otel" />
+        <meta name="og:description" content="Güven ve huzur ortamında konaklama" />
+        <meta name="og:type" content="website" />
+
+        <meta charset="utf-8" />
+        <meta itemprop="name" content="Güven Otel" />
+        <meta itemprop="description" content="Güven ve huzur ortamında konaklama" />
+        <meta name="description" content="Güven ve huzur ortamında konaklama" />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="Turkish" />
+        <meta name="revisit-after" content="3 days" />
+        <meta name="author" content="ilyas Bozdemir" />
         <meta name="description" content="Güven ve huzur ortamında konaklama" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
