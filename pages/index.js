@@ -13,16 +13,14 @@ export default function Home() {
   return (
     <>
       <Head>
-       
+        <title>Güven Otel</title>
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Güven Otel" />
         <meta name="twitter:description" content="Güven ve huzur ortamında konaklama" />
         <meta name="twitter:site" content="@Ilyasbzdmr70" />
-
         <meta name="og:title" content="Güven Otel" />
         <meta name="og:description" content="Güven ve huzur ortamında konaklama" />
         <meta name="og:type" content="website" />
-
         <meta charset="utf-8" />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content="Güven ve huzur ortamında konaklama" />
@@ -37,7 +35,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Stack as={"main"}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Yükleniyor...</div>}>
           <Hotel />
           <AboutUs />
           <>
