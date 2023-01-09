@@ -10,6 +10,10 @@ const AboutUs = React.lazy(() => import("../components/AboutUs"));
 const Footer = React.lazy(() => import("../components/Footer"));
 
 export default function Home() {
+
+  const desc=`Otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`
+
+
   return (
     <>
       <Head>
@@ -18,45 +22,31 @@ export default function Home() {
         <meta name="twitter:title" content="Güven Otel" />
         <meta
           name="twitter:description"
-          content="Şirin otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır.
-Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur.
-Konum itibarı ile Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Ermenek Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır."
+          content={desc}
         />
 
         <meta name="twitter:site" content="@Ilyasbzdmr70" />
         <meta name="og:title" content="Güven Otel" />
         <meta
           name="og:description"
-          content="Şirin otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır.
-Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur.
-Konum itibarı ile Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Ermenek Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır."
+          content={desc}
         />
         <meta name="og:type" content="website" />
         <meta charset="utf-8" />
         <meta itemprop="name" content="Güven Otel" />
         <meta
           itemprop="description"
-          content="Şirin otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır.
-Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur.
-Konum itibarı ile Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Ermenek Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır."
+          content={desc}
         />
         <meta
           name="description"
-          content="Şirin otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır.
-Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur.
-Konum itibarı ile Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Ermenek Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır."
+          content={desc}
         />
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Turkish" />
         <meta name="revisit-after" content="3 days" />
         <meta name="author" content="ilyas Bozdemir" />
-        <meta
-          name="description"
-          content="Şirin otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır.
-Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur.
-Konum itibarı ile Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Ermenek Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır."
-        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
