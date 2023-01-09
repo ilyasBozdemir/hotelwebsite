@@ -1,4 +1,12 @@
-import { Box, Stack, Text, Flex, HStack, Icon,Divider } from "@chakra-ui/react";
+import {
+  Box,
+  Stack,
+  Text,
+  Flex,
+  HStack,
+  Icon,
+  Divider,
+} from "@chakra-ui/react";
 import React from "react";
 import Link from "next/link";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
@@ -48,44 +56,46 @@ function Hotel() {
             >
               <HStack
                 color={bg !== "dark" ? "white" : "black"}
-                fontSize={13}
                 fontFamily={"Georgia"}
                 spacing={3}
                 p={3}
+                fontSize={{ base: 15, md: 18 }}
               >
-                <Icon as={BsFillTelephoneFill} fontSize={18}/>
-                <> Rezervasyon: </>
+                <Icon as={BsFillTelephoneFill} />
+                <Text display={{ base: "none", md: "flex-inline" }}>
+                  {" "}
+                  Rezervasyon:{" "}
+                </Text>
                 <Link href={"tel:+903387368005"} legacyBehavior>
                   <a>0338 736 80 05</a>
                 </Link>
-                <Icon as={BsFillTelephoneFill} fontSize={18}/>
-                
+                <Icon as={BsFillTelephoneFill} />
+
                 <Link href={"tel:+905435403160"} legacyBehavior>
                   <a>0543 540 31 60</a>
                 </Link>
-
               </HStack>
               <HStack
                 color={bg !== "dark" ? "white" : "black"}
-                fontSize={13}
                 fontFamily={"Georgia"}
                 spacing={3}
                 p={3}
+                fontSize={{ base: 15, md: 18 }}
               >
-               <Icon as={FaMapMarkerAlt} fontSize={18}/>
-               <Link
-              href={
-                "https://www.google.com/maps/place/G%C3%BCneyyurt,+70402+G%C3%BCneyyurt%2FErmenek%2FKaraman/@36.6822526,32.7908054,14z/data=!3m1!4b1!4m5!3m4!1s0x14dbe962653d308f:0x467dd49399d0d14a!8m2!3d36.68222!4d32.808315"
-              }
-              legacyBehavior
-            >
-              <a target="_blank" rel="noopener noreferrer">
-                Güneyyurt Kasabası
-              </a>
-            </Link>
+                <Icon as={FaMapMarkerAlt} />
+                <Link
+                  href={
+                    "https://www.google.com/maps/place/G%C3%BCneyyurt,+70402+G%C3%BCneyyurt%2FErmenek%2FKaraman/@36.6822526,32.7908054,14z/data=!3m1!4b1!4m5!3m4!1s0x14dbe962653d308f:0x467dd49399d0d14a!8m2!3d36.68222!4d32.808315"
+                  }
+                  legacyBehavior
+                >
+                  <a target="_blank" rel="noopener noreferrer">
+                    Güneyyurt
+                  </a>
+                </Link>
               </HStack>
             </HStack>
-            <Divider/>
+            <Divider />
             <HStack
               as={Flex}
               w={"full"}
@@ -119,7 +129,7 @@ function Hotel() {
                 </Link>
                 <Link href={"/galeri"} legacyBehavior>
                   <Text cursor={"pointer"} as={"a"}>
-                    Galeri
+                  Foto Galeri
                   </Text>
                 </Link>
                 <Link href={"/iletisim"} legacyBehavior>
