@@ -10,6 +10,7 @@ import {
 import React from "react";
 import Link from "next/link";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
+import Logo from './Logo'
 import { useState } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -124,17 +125,7 @@ function Hotel() {
               h={8}
               pos={'relative'}
             >
-              <Text
-                fontSize="3xl"
-                fontFamily={"Georgia"}
-                cursor={"pointer"}
-              >
-                <Link href={"/"} legacyBehavior>
-                  <Text cursor={"pointer"} as={"a"}>
-                    Güven Otel
-                  </Text>
-                </Link>
-              </Text>
+              <Logo/>
               <Stack
                 direction={"row"}
                 spacing={6}

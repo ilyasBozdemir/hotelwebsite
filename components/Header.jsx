@@ -25,7 +25,7 @@ export default function Header() {
             <a>Hakkımızda</a>
           </Link>
           <Link href={"/galeri"} legacyBehavior>
-            <a>Galeri</a>
+            <a>Foto Galeri</a>
           </Link>
           <Link href={"/iletisim"} legacyBehavior>
             <a>İletişim</a>
