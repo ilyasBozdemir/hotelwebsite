@@ -65,7 +65,9 @@ export default function Home() {
          fontFamily={"Cursive,Monospace"}
          >
           <Center>
+          <Link href="/hakkimizda">
            <Button colorScheme='blue' variant='ghost' w={100}>Hakkımızda</Button>
+           </Link>
            </Center>
             <Stack
                 as={Flex}
@@ -75,7 +77,7 @@ export default function Home() {
               p={1}
             >
               <Box boxShadow={'0 0 30px 0 rgb(33 30 25 / 20%)'} border={"25px solid #fff"} w={{ base: "full", lg: "40%" }}>
-                <Image alt='otel-giris-resim' draggable={false} src="/images/giris.jpeg" w={350} />
+                <Image borderRounded={5} rounded={5} alt='otel-giris-resim' draggable={false} src="/images/giris.jpeg" w={350} />
               </Box>
               <Box fontSize="18px" w={{ base: "full", lg: "50%" }} p={5}>
                 <Heading
@@ -105,6 +107,7 @@ export default function Home() {
               direction={{ base: "column", lg: "row" }}
               w={"full"}
               h={{ base: "350px", lg: "250px" }}
+              my={4}
             >
               <Stack w={{ base: "full", lg: "45%" }}>
                 <Heading as="h2" size="xl">
