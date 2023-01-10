@@ -4,7 +4,15 @@ import Header from "../components/Header";
 
 import Footer from "../components/Footer";
 import Link from "next/link";
-import { Stack, Flex, Text, Wrap, WrapItem ,Image} from "@chakra-ui/react";
+import {
+  Stack,
+  Flex,
+  Text,
+  Wrap,
+  WrapItem,
+  Image,
+  Box,
+} from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 
 function GalleryPage() {
@@ -48,13 +56,22 @@ function GalleryPage() {
               justifyContent={"space-between"}
               direction={{ base: "column", lg: "row" }}
               w={"full"}
-              h={{ base: "350px", lg: "250px" }}
               mt={30}
             >
               <Wrap>
-                {images.map((img, i) =>(
+                {images.map((img, i) => (
                   <WrapItem key={i}>
-                    <Image w={40} src={img.src} alt={img.alt} />
+                    <Box
+                      boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
+                      border={"10px solid #fff"}
+                    >
+                      <Image
+                        w={200}
+                        aspectRatio={2 / 3}
+                        src={img.src}
+                        alt={img.alt}
+                      />
+                    </Box>
                   </WrapItem>
                 ))}
               </Wrap>
