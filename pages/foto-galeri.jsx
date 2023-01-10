@@ -20,102 +20,82 @@ function GalleryPage() {
   var images = [
     {
       src: "/images/otel-dis-gece.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/otel-dis-gunduz.jpg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/giris.jpeg",
-      desc: "",
       alt: "2",
     },
     {
       src: "/images/giris-2.jpeg",
-      desc: "",
       alt: "2",
     },
     {
       src: "/images/giris-3.jpeg",
-      desc: "",
       alt: "2",
     },
     {
       src: "/images/kapi.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/koridor.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/lavabo-1.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/lavabo-2.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/lobi.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/lobi-2.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/manzara.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/manzara-2.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/merdiven.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/oda.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/oda-1.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/oda-2.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/oda-3.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/oda-4.jpeg",
-      desc: "",
       alt: "3",
     },
     {
       src: "/images/oda-5.jpeg",
-      desc: "",
       alt: "3",
     },
   ];
@@ -156,15 +136,15 @@ function GalleryPage() {
                       <Box
                         boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
                         border={"10px solid #fff"}
+                        overflow={'hidden'}
                       >
                         <Image
                           w={200}
-                          aspectRatio={2 / 3}
                           src={img.src}
                           alt={img.alt}
                           transition="all .5s ease-in-out"
                           _hover={{
-                            transform: "scale(1.02)",
+                            transform: "scale(1.50)",
                           }}
                         />
                       </Box>
