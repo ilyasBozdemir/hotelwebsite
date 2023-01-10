@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Text } from "@chakra-ui/react";
-export default function Logo() {
+export default function Logo(props) {
+  const { colorState = false } = props;
   const date = new Date();
   const currentHour = date.getHours();
   const [bg, setBg] = React.useState(null);

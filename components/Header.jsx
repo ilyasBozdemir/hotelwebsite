@@ -2,7 +2,7 @@ import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react";
 import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-export default function Header() {
+export default function Header(props) {
   return (
     <>
       <HStack
@@ -12,7 +12,7 @@ export default function Header() {
         justifyContent={"space-between"}
         textAling={"center"}
       >
-        <Logo />
+        <Logo colorState={props.colorState} />
         <Stack direction={"row"} spacing={6}>
           <Link href={"/"} legacyBehavior>
             <a>Anasayfa</a>
