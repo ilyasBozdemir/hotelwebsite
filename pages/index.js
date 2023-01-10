@@ -10,7 +10,7 @@ import {
   Icon,
   Box,
   Image,
-  Text,
+  Text,Button,
 } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
@@ -55,6 +55,7 @@ export default function Home() {
 
          <Box bg={'gray.200'}>
          <Center >
+         
          <Stack
          p={"100px 30px"}
          m={"0 auto"}
@@ -63,6 +64,9 @@ export default function Home() {
          spacing={10}
          fontFamily={"Cursive,Monospace"}
          >
+          <Center>
+           <Button colorScheme='blue' variant='ghost' w={100}>Hakkımızda</Button>
+           </Center>
             <Stack
                 as={Flex}
               bg={'white'}
