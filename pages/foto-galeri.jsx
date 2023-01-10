@@ -108,7 +108,7 @@ function GalleryPage() {
       </Head>
       <>
         <Header />
-        <Stack>
+        <>
           <Stack direction={"column"} mt={5} bg={"gray.200"}>
             <Breadcrumb>
               <BreadcrumbItem>
@@ -128,15 +128,20 @@ function GalleryPage() {
               direction={{ base: "column", lg: "row" }}
               w={"full"}
               mt={30}
+              display="table"
             >
-              <Center>
-                <Wrap>
+              <>
+                <Wrap
+                  display="table-cell"
+                  verticalAlign="middle"
+                  textAlign="center"
+                >
                   {images.map((img, i) => (
                     <WrapItem key={i}>
                       <Box
                         boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
                         border={"10px solid #fff"}
-                        overflow={'hidden'}
+                        overflow={"hidden"}
                       >
                         <Image
                           w={200}
@@ -151,10 +156,10 @@ function GalleryPage() {
                     </WrapItem>
                   ))}
                 </Wrap>
-              </Center>
+              </>
             </Flex>
           </Stack>
-        </Stack>
+        </>
         <Footer />
       </>
     </>
