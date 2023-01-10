@@ -9,10 +9,6 @@ export default function Header() {
         as={Flex}
         w={"full"}
         h={10}
-        zIndex={2}
-        top={0}
-        left={0}
-        position="absolute"
         justifyContent={"space-between"}
         textAling={"center"}
       >
@@ -24,7 +20,7 @@ export default function Header() {
           <Link href={"/hakkimizda"} legacyBehavior>
             <a>Hakkımızda</a>
           </Link>
-          <Link href={"/galeri"} legacyBehavior>
+          <Link href={"/foto-galeri"} legacyBehavior>
             <a>Foto Galeri</a>
           </Link>
           <Link href={"/iletisim"} legacyBehavior>

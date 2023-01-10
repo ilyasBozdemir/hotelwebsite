@@ -140,7 +140,7 @@ function Hotel() {
                     Hakkımızda
                   </Text>
                 </Link>
-                <Link href={"/galeri"} legacyBehavior>
+                <Link href={"/foto-galeri"} legacyBehavior>
                   <Text cursor={"pointer"} as={"a"}>
                     Foto Galeri
                   </Text>

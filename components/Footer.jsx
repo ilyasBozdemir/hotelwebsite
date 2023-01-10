@@ -66,7 +66,7 @@ export default function Footer() {
           <Link href={"/hakkimizda"} legacyBehavior>
             <a>Hakkımızda</a>
           </Link>
-          <Link href={"/galeri"} legacyBehavior>
+          <Link href={"/foto-galeri"} legacyBehavior>
             <a>Foto Galeri</a>
           </Link>
           <Link href={"/iletisim"} legacyBehavior>
