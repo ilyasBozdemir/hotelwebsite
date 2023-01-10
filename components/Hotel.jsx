@@ -18,6 +18,23 @@ function Hotel() {
   const date = new Date();
   const currentHour = date.getHours();
   const [bg, setBg] = useState(null);
+  const [fixed, setFixed] = useState(false);
+
+  React.useEffect(() => {
+    function handleScroll() {
+      if (window.pageYOffset > 50) {
+        setFixed(true);
+      } else {
+        setFixed(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   React.useEffect(() => {
     if (currentHour >= 6 && currentHour < 18) {
@@ -32,8 +49,9 @@ function Hotel() {
       <Box pos={"relative"}>
         <Box>
           <TimeBasedImageTimeBasedImage
-            dayImage={"/images/otel-dis-gunduz.jpeg"}
-            //nightImage={"/images/otel-dis-gunduz.jpeg"}
+            // dayImage={"/images/otel-dis-gunduz.jpg"}
+            dayImage={"/images/otel-dis-gunduz.jpg"}
+            //nightImage={"/images/otel-dis-gunduz.jpg"}
             nightImage={"/images/otel-dis-gece.jpeg"}
           />
           <Stack
@@ -46,24 +64,28 @@ function Hotel() {
             as={Flex}
             w={"full"}
             spacing={0}
+            backgroundColor={bg === "dark" ? "black" : "white"}
+            color={bg === "dark" ? "white" : "black"}
+            boxShadow={
+              bg === "dark"
+                ? "0px 10px 20px rgba(0, 0, 0, 0.5)"
+                : "0px 10px 20px rgba(255, 255, 255, 0.5)"
+            }
           >
             <HStack
               as={Flex}
-              h={20}
-              backgroundColor={bg === "dark" ? "white" : "black"}
               justifyContent={"space-between"}
               textAling={"center"}
+              fontSize={{ base: 12, md: 14 }}
             >
               <HStack
-                color={bg !== "dark" ? "white" : "black"}
                 fontFamily={"Georgia"}
                 spacing={3}
                 p={3}
-                fontSize={{ base: 15, md: 18 }}
+                
               >
                 <Icon as={BsFillTelephoneFill} />
                 <Text display={{ base: "none", md: "flex-inline" }}>
-                  {" "}
                   Rezervasyon:{" "}
                 </Text>
                 <Link href={"tel:+903387368005"} legacyBehavior>
@@ -76,11 +98,9 @@ function Hotel() {
                 </Link>
               </HStack>
               <HStack
-                color={bg !== "dark" ? "white" : "black"}
                 fontFamily={"Georgia"}
                 spacing={3}
                 p={3}
-                fontSize={{ base: 15, md: 18 }}
               >
                 <Icon as={FaMapMarkerAlt} />
                 <Link
@@ -99,13 +119,12 @@ function Hotel() {
             <HStack
               as={Flex}
               w={"full"}
-              h={10}
-              backgroundColor={bg === "dark" ? "white" : "black"}
               justifyContent={"space-between"}
-              textAling={"center"}
+              textAlign={"center"}
+              h={8}
+              pos={'relative'}
             >
               <Text
-                color={bg !== "dark" ? "white" : "black"}
                 fontSize="3xl"
                 fontFamily={"Georgia"}
                 cursor={"pointer"}
@@ -116,7 +135,10 @@ function Hotel() {
                   </Text>
                 </Link>
               </Text>
-              <Stack direction={"row"} spacing={6}>
+              <Stack
+                direction={"row"}
+                spacing={6}
+              >
                 <Link href={"/"} legacyBehavior>
                   <Text cursor={"pointer"} as={"a"}>
                     Anasayfa
@@ -129,7 +151,7 @@ function Hotel() {
                 </Link>
                 <Link href={"/galeri"} legacyBehavior>
                   <Text cursor={"pointer"} as={"a"}>
-                  Foto Galeri
+                    Foto Galeri
                   </Text>
                 </Link>
                 <Link href={"/iletisim"} legacyBehavior>

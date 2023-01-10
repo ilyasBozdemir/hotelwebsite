@@ -13,7 +13,7 @@ function TimeBasedImageTimeBasedImage({ nightImage, dayImage }) {
 
   return (
     <>
-      <Image src={imageUrl} alt="Guven-otel" />
+      <Image src={imageUrl} alt="Guven-otel" w='full' />
     </>
   );
 }

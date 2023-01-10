@@ -17,7 +17,7 @@ export default function Logo() {
   return (
     <>
       <Text
-        color={bg !== "dark" ? "white" : "black"}
+        color={bg === "dark" ? "white" : "black"}
         fontSize="3xl"
         fontFamily={"Georgia"}
         cursor={"pointer"}
