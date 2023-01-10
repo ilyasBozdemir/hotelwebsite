@@ -4,23 +4,23 @@ import Header from "../components/Header";
 
 import Footer from "../components/Footer";
 import Link from "next/link";
-import {
-  Stack,
-  Flex,
-  Heading,
-  HStack,
-  Icon,
-  Image,
-  Text,
-  Box,
-} from "@chakra-ui/react";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-} from "@chakra-ui/react";
-function Gallery() {
+import { Stack, Flex, Text, Wrap, WrapItem ,Image} from "@chakra-ui/react";
+import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
+
+function GalleryPage() {
+  var images = [
+    {
+      src: "/images/giris-2.jpeg",
+      desc: "",
+      alt: "2",
+    },
+    {
+      src: "/images/giris-3.jpeg",
+      desc: "",
+      alt: "3",
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -30,38 +30,41 @@ function Gallery() {
       <>
         <Header />
         <Stack>
-        <Stack direction={"column"} mt={5} bg={"gray.200"}>
-         
+          <Stack direction={"column"} mt={5} bg={"gray.200"}>
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <>
+                  <Link href={"/"} legacyBehavior>
+                    <a>Anasayfa</a>
+                  </Link>
+                </>
+              </BreadcrumbItem>
 
-          <Breadcrumb>
-            <BreadcrumbItem>
-              <>
-                <Link href={"/"} legacyBehavior>
-                  <a>Anasayfa</a>
-                </Link>
-              </>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem isCurrentPage>
-              <Text>Foto Galeri</Text>
-            </BreadcrumbItem>
-          </Breadcrumb>
-          <Flex
-            justifyContent={"space-between"}
-            direction={{ base: "column", lg: "row" }}
-            w={"full"}
-            h={{ base: "350px", lg: "250px" }}
-            mt={30}
-          >
-           
-            
-          </Flex>
+              <BreadcrumbItem isCurrentPage>
+                <Text>Foto Galeri</Text>
+              </BreadcrumbItem>
+            </Breadcrumb>
+            <Flex
+              justifyContent={"space-between"}
+              direction={{ base: "column", lg: "row" }}
+              w={"full"}
+              h={{ base: "350px", lg: "250px" }}
+              mt={30}
+            >
+              <Wrap>
+                {images.map((img, i) =>(
+                  <WrapItem key={i}>
+                    <Image w={40} src={img.src} alt={img.alt} />
+                  </WrapItem>
+                ))}
+              </Wrap>
+            </Flex>
+          </Stack>
         </Stack>
-      </Stack>
-      <Footer />
+        <Footer />
       </>
     </>
   );
 }
 
-export default Gallery;
+export default GalleryPage;
