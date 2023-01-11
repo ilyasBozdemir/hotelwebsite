@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { Box, CloseButton, Flex, Text } from "@chakra-ui/react";
+import { Box, CloseButton, Divider, Flex, Text } from "@chakra-ui/react";
 
 import {
   FiHome,
@@ -12,6 +12,7 @@ import {
 } from "react-icons/fi";
 
 import NavLink from "./NavLink";
+import Logo from "./Logo";
 
 const LinkItems = [
   { label: "Anasayfa", icon: FiHome, href: "/" },
@@ -31,12 +32,12 @@ export default function Sidebar({ onClose, ...rest }) {
   }, [router.events, onClose]);
 
   return (
-    <Box transition="3s ease" bg="white" pos="fixed" h="full" {...rest}>
+    <Box transition="3s ease" bg="white" pos="fixed" h="full" w={'full'} {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
+        <Logo />
+        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
+      <Divider/>
       {LinkItems.map((link, i) => (
         <NavLink key={i} link={link} />
       ))}
