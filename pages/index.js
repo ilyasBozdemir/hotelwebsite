@@ -106,7 +106,7 @@ export default function Home() {
                       konaklama deneyimi sunmak için tasarlanmış bir küçük otel.
                       Otel, 26 yatak kapasitesine sahiptir ve konuklarının her
                       türlü ihtiyacını karşılamak için temiz ve modern odalar
-                      sunuyor.{" "}
+                      sunuyor.
                     </Text>
                   </Box>
                 </Stack>
@@ -138,7 +138,7 @@ export default function Home() {
 
                     <Link
                       href={
-                        "https://www.google.com/maps/place/G%C3%BCneyyurt,+70402+G%C3%BCneyyurt%2FErmenek%2FKaraman/@36.6822526,32.7908054,14z/data=!3m1!4b1!4m5!3m4!1s0x14dbe962653d308f:0x467dd49399d0d14a!8m2!3d36.68222!4d32.808315"
+                        "https://www.google.com/maps/place/G%C3%BCven+Otel/@36.6812645,32.8054781,15z/data=!4m5!3m4!1s0x0:0x50308dc7e9b79f7d!8m2!3d36.6812645!4d32.8054781"
                       }
                       legacyBehavior
                     >
@@ -167,7 +167,9 @@ export default function Home() {
                 as={"iframe"}
                 ratio={1}
                 allowFullcreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25597.420587230703!2d32.79080535991366!3d36.682252635024184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dbe962653d308f%3A0x467dd49399d0d14a!2sG%C3%BCneyyurt%2C%2070402%20G%C3%BCneyyurt%2FErmenek%2FKaraman!5e0!3m2!1str!2str!4v1673271577056!5m2!1str!2str"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12798.874711885132!2d32.8054781!3d36.6812645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x50308dc7e9b79f7d!2sG%C3%BCven%20Otel!5e0!3m2!1str!2str!4v1673430130316!5m2!1str!2str"
               />
             </Flex>
           </>

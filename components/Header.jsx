@@ -14,6 +14,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Header(props) {
   return (
@@ -28,35 +29,40 @@ export default function Header(props) {
       h={"auto"}
       bg={"white"}
     >
-       <Stack
-          direction={"row"}
-          spacing={6}
-          as={Flex}
-          justifyContent={"space-between"}  direction={"row"}
-          fontSize={{base:'12px',md:'15px'}}
-        >
-          <HStack   spacing={3}   >
-            <Icon as={BsFillTelephoneFill} />
-            <Link href={"tel:+903387368005"} legacyBehavior>
-              <a>0338 736 80 05</a>
-            </Link>
-            </HStack>
-
-            <HStack  spacing={3} >
-            <Icon as={BsFillTelephoneFill} />
-            <Link href={"tel:+905435403160"} legacyBehavior>
-              <a>0543 540 31 60</a>
-            </Link>
-          </HStack>
-          <HStack  spacing={3} >
-            <Icon as={BsFillTelephoneFill} />
-            <Link href={"tel:+905312486322"} legacyBehavior>
-              <a>0531 248 63 22</a>
-            </Link>
-          </HStack>
-
-        </Stack>
-        <Divider/>
+      <Stack
+        direction={"row"}
+        spacing={6}
+        as={Flex}
+        justifyContent={"space-around"}
+        fontSize={{ base: "12px", md: "15px" }}
+      >
+        <HStack spacing={3}>
+          <Icon as={BsFillTelephoneFill} />
+          <Link href={"tel:+905435403160"} legacyBehavior>
+            <a>0543 540 31 60</a>
+          </Link>
+        </HStack>
+        <HStack spacing={3}>
+          <Icon as={BsFillTelephoneFill} />
+          <Link href={"tel:+905312486322"} legacyBehavior>
+            <a>0531 248 63 22</a>
+          </Link>
+        </HStack>
+        <HStack spacing={3}>
+          <Icon as={FaMapMarkerAlt} />
+          <Link
+            href={
+              "https://www.google.com/maps/place/G%C3%BCven+Otel/@36.6812645,32.8054781,15z/data=!4m5!3m4!1s0x0:0x50308dc7e9b79f7d!8m2!3d36.6812645!4d32.8054781"
+            }
+            legacyBehavior
+          >
+            <a target="_blank" rel="noopener noreferrer">
+              Yol Tarifi
+            </a>
+          </Link>
+        </HStack>
+      </Stack>
+      <Divider />
       <HStack
         as={Flex}
         h={10}
@@ -94,7 +100,6 @@ export default function Header(props) {
             <a>İletişim</a>
           </Link>
         </Stack>
-       
       </HStack>
     </Stack>
   );
