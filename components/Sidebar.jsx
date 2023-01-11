@@ -14,11 +14,10 @@ import {
 import NavLink from "./NavLink";
 
 const LinkItems = [
-  { label: "Home", icon: FiHome, href: "/" },
-  { label: "Trending", icon: FiTrendingUp, href: "/" },
-  { label: "Explore", icon: FiCompass, href: "/" },
-  { label: "Favourites", icon: FiStar, href: "/" },
-  { label: "Settings", icon: FiSettings, href: "/" },
+  { label: "Anasayfa", icon: FiHome, href: "/" },
+  { label: "Hakkımızda", icon: FiTrendingUp, href: "/hakkimizda" },
+  { label: "Foto Galeri", icon: FiCompass, href: "/foto-galeri" },
+  { label: "İletişim", icon: FiStar, href: "/iletisim" },
 ];
 
 export default function Sidebar({ onClose, ...rest }) {
@@ -32,21 +31,11 @@ export default function Sidebar({ onClose, ...rest }) {
   }, [router.events, onClose]);
 
   return (
-    <Box
-      transition="3s ease"
-      bg="white"
-      borderRight="1px"
-      borderRightColor="gray.200"
-      w={{ base: "full", md: 60 }}
-      pos="fixed"
-      h="full"
-      {...rest}
-    >
+    <Box transition="3s ease" bg="white" pos="fixed" h="full" {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           Logo
         </Text>
-        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link, i) => (
         <NavLink key={i} link={link} />

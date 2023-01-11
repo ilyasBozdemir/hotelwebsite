@@ -32,7 +32,7 @@ function Contact() {
       </Head>
       <Header />
       <Stack>
-        <Stack direction={"column"} mt={5} bg={"gray.200"}>
+        <Stack direction={"column"} mt={10} bg={"gray.200"}>
           <Box w={"full"} h={400} overflow={"hidden"}>
             <Image src="/images/lobi-2-contact.jpg"  w={'full'}/>
           </Box>

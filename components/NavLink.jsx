@@ -9,8 +9,8 @@ export default function NavLink({ link, ...rest }) {
       <a>
         <Flex
           align="center"
-          p="4"
-          mx="4"
+          p="2"
+          mx="2"
           borderRadius="lg"
           role="group"
           cursor="pointer"

@@ -10,7 +10,8 @@ import {
   Icon,
   Box,
   Image,
-  Text,Button,
+  Text,
+  Button,
 } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +22,7 @@ const Hotel = React.lazy(() => import("../components/Hotel"));
 const Footer = React.lazy(() => import("../components/Footer"));
 
 export default function Home() {
-  const desc = `Otelimiz 26 yataklıdır.Günlük ücreti kahvaltısız kişi başı 100 tl dir.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
+  const desc = `Otelimiz 26 yataklıdır.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
 
   return (
     <>
@@ -53,52 +54,65 @@ export default function Home() {
         <Suspense fallback={<div>Yükleniyor...</div>}>
           <Hotel />
 
-         <Box bg={'gray.200'}>
-         <Center >
-         
-         <Stack
-         p={"100px 30px"}
-         m={"0 auto"}
-         maxW={"container.xl"}
-         boxShadow={"0 0 30px 0 rgb(33 30 25 / 10%)"}
-         spacing={10}
-         fontFamily={"Cursive,Monospace"}
-         >
-          <Center>
-          <Link href="/hakkimizda">
-           <Button colorScheme='blue' variant='ghost' w={100}>Hakkımızda</Button>
-           </Link>
-           </Center>
-            <Stack
-                as={Flex}
-              bg={'white'}
-              direction={{ base: "column", lg: "row" }}
-              boxShadow={'0 0 30px 0 rgb(33 30 25 / 20%)'}
-              p={1}
-            >
-              <Box boxShadow={'0 0 30px 0 rgb(33 30 25 / 20%)'} border={"25px solid #fff"} w={{ base: "full", lg: "40%" }}>
-                <Image borderRounded={5} rounded={5} alt='otel-giris-resim' draggable={false} src="/images/giris.jpeg" w={350} />
-              </Box>
-              <Box fontSize="18px" w={{ base: "full", lg: "50%" }} p={5}>
-                <Heading
-                  as="h3"
-                  fontSize={20}
-                  fontWeight={'semibold'}
-                  textAling={{ base: "center", md: "start" }}
+          <Box bg={"gray.200"}>
+            <Center>
+              <Stack
+                p={"100px 30px"}
+                m={"0 auto"}
+                maxW={"container.xl"}
+                boxShadow={"0 0 30px 0 rgb(33 30 25 / 10%)"}
+                spacing={10}
+                fontFamily={"Cursive,Monospace"}
+              >
+                <Center>
+                  <Link href="/hakkimizda">
+                    <Button colorScheme="blue" variant="ghost" w={100}>
+                      Hakkımızda
+                    </Button>
+                  </Link>
+                </Center>
+                <Stack
+                  as={Flex}
+                  bg={"white"}
+                  direction={{ base: "column", lg: "row" }}
+                  boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
+                  p={1}
                 >
-                  GÜVEN OTEL
-                </Heading>
-                <Text >
-                  Güneyyurt Kasabasında konuklarına rahat ve huzurlu bir
-                  konaklama deneyimi sunmak için tasarlanmış bir küçük otel.
-                  Otel, 26 yatak kapasitesine sahiptir ve konuklarının her türlü
-                  ihtiyacını karşılamak için temiz ve modern odalar sunuyor.{" "}
-                </Text>
-              </Box>
-            </Stack>
-            </Stack>
-          </Center>
-         </Box>
+                  <Box
+                    boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
+                    border={"25px solid #fff"}
+                    w={{ base: "full", lg: "40%" }}
+                  >
+                    <Image
+                      borderRounded={5}
+                      rounded={5}
+                      alt="otel-giris-resim"
+                      draggable={false}
+                      src="/images/giris.jpeg"
+                      w={350}
+                    />
+                  </Box>
+                  <Box fontSize="18px" w={{ base: "full", lg: "50%" }} p={5}>
+                    <Heading
+                      as="h3"
+                      fontSize={20}
+                      fontWeight={"semibold"}
+                      textAling={{ base: "center", md: "start" }}
+                    >
+                      GÜVEN OTEL
+                    </Heading>
+                    <Text>
+                      Güneyyurt Kasabasında konuklarına rahat ve huzurlu bir
+                      konaklama deneyimi sunmak için tasarlanmış bir küçük otel.
+                      Otel, 26 yatak kapasitesine sahiptir ve konuklarının her
+                      türlü ihtiyacını karşılamak için temiz ve modern odalar
+                      sunuyor.{" "}
+                    </Text>
+                  </Box>
+                </Stack>
+              </Stack>
+            </Center>
+          </Box>
 
           <>
             <Flex

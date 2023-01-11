@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Header from "../components/Header";
 import { useBreakpointValue } from '@chakra-ui/react'
 import Footer from "../components/Footer";
 import Link from "next/link";
@@ -66,9 +65,8 @@ Otelimizde konaklamanız sırasında sizlere hizmet vermeye devam edeceğiz.
         <meta name="description" content="Hakkımızda, Güven Otel" />
       </Head>
       <>
-        <Header />
         <Stack>
-        <Stack direction={"column"} mt={5} >
+        <Stack direction={"column"} mt={10} >
          
 
           <Breadcrumb>

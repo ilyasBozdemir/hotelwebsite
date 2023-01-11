@@ -1,15 +1,15 @@
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 
-import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
+import { Box, Drawer, DrawerContent, useDisclosure ,DrawerCloseButton} from "@chakra-ui/react";
 
 export default function Layout({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg="gray.100">
+    <Box minH="100vh">
       <Sidebar
         onClose={() => onClose}
-        display={{ base: "none", md: "block" }}
+        display={{ base: "none", md: "none" }}
       />
       <Drawer
         autoFocus={false}
@@ -18,16 +18,18 @@ export default function Layout({ children }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size="sm"
       >
         <DrawerContent>
+        <DrawerCloseButton />
           <Sidebar onClose={onClose} />
         </DrawerContent>
       </Drawer>
-
       {/*= Header =*/}
+
       <Header onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
+
+      <Box ml={{ base: 0, md: 0 }} >
         {children}
       </Box>
     </Box>
