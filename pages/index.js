@@ -48,6 +48,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="”canonical”" href="/" />
+        <meta
+          name="google-site-verification"
+          content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
+        />
       </Head>
       <Stack as={"main"}>
         <Suspense fallback={<div>Yükleniyor...</div>}>
