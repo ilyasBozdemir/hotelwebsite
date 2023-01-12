@@ -19,9 +19,13 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 const Hotel = React.lazy(() => import("../components/Hotel"));
 const Footer = React.lazy(() => import("../components/Footer"));
+import ReactGA from 'react-ga';
 
 export default function Home() {
   const desc = `Otelimiz 26 yataklıdır.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
+
+  
+ReactGA.initialize('G-BP2QER0C4G');
 
   return (
     <>
@@ -36,8 +40,10 @@ export default function Home() {
         <meta name="og:description" content={desc} />
         <meta name="og:type" content="website" />
         <meta charset="utf-8" />
-
-        <meta name="google-site-verification" content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk" />
+        <meta
+            name="google-site-verification"
+            content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
+          />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
         <meta name="description" content={desc} />
