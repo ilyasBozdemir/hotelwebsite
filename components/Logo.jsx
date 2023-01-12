@@ -18,7 +18,7 @@ export default function Logo(props) {
   return (
     <>
       <Text
-        color={bg === "dark" ? "white" : "black"}
+        color={"black"}
         fontSize={"25px"}
         fontFamily={"Georgia"}
         cursor={"pointer"}

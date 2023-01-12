@@ -4,7 +4,7 @@ import createEmotionServer from "@emotion/server/create-instance";
 import theme, { roboto } from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import { ColorModeScript } from "@chakra-ui/react";
-
+import { Helmet } from 'react-helmet';
 export default class MyDocument extends Document {
   render() {
     return (
@@ -14,6 +14,27 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
+
+          <meta
+          name="google-site-verification"
+          content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
+        />
+         <Helmet>
+          <script>
+            {`
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP2QER0C4G"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-BP2QER0C4G');
+            </script>
+            `}
+          </script>
+        </Helmet>
+
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

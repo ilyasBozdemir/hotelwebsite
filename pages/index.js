@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-
 import {
   Center,
   Stack,
@@ -177,6 +176,7 @@ export default function Home() {
           <Footer />
         </Suspense>
       </Stack>
+      
     </>
   );
 }

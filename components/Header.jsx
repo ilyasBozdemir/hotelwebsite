@@ -28,6 +28,7 @@ export default function Header(props) {
       w={"full"}
       h={"auto"}
       bg={"white"}
+      color={"black"}
     >
       <Stack
         direction={"row"}
@@ -39,13 +40,13 @@ export default function Header(props) {
         <HStack spacing={3}>
           <Icon as={BsFillTelephoneFill} />
           <Link href={"tel:+905435403160"} legacyBehavior>
-            <a>0543 540 31 60</a>
+            <Text as="a">0543 540 31 60</Text>
           </Link>
         </HStack>
         <HStack spacing={3}>
           <Icon as={BsFillTelephoneFill} />
           <Link href={"tel:+905312486322"} legacyBehavior>
-            <a>0531 248 63 22</a>
+            <Text as="a">0531 248 63 22</Text>
           </Link>
         </HStack>
         <HStack spacing={3}>
@@ -56,9 +57,9 @@ export default function Header(props) {
             }
             legacyBehavior
           >
-            <a target="_blank" rel="noopener noreferrer">
+            <Text as="a" target="_blank" rel="noopener noreferrer">
               Yol Tarifi
-            </a>
+            </Text>
           </Link>
         </HStack>
       </Stack>
@@ -88,16 +89,40 @@ export default function Header(props) {
           spacing={6}
         >
           <Link href={"/"} legacyBehavior>
-            <a>Anasayfa</a>
+            <Text
+              as="a"
+              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              cursor={"pointer"}
+            >
+              Anasayfa
+            </Text>
           </Link>
           <Link href={"/hakkimizda"} legacyBehavior>
-            <a>Hakkımızda</a>
+            <Text
+              as="a"
+              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              cursor={"pointer"}
+            >
+              Hakkımızda
+            </Text>
           </Link>
           <Link href={"/foto-galeri"} legacyBehavior>
-            <a>Foto Galeri</a>
+            <Text
+              as="a"
+              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              cursor={"pointer"}
+            >
+              Foto Galeri
+            </Text>
           </Link>
           <Link href={"/iletisim"} legacyBehavior>
-            <a>İletişim</a>
+            <Text
+              as="a"
+              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              cursor={"pointer"}
+            >
+              İletişim
+            </Text>
           </Link>
         </Stack>
       </HStack>
