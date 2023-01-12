@@ -15,10 +15,7 @@ export default class MyDocument extends Document {
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
 
-          <meta
-          name="google-site-verification"
-          content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
-        />
+       
          <Helmet>
           <script>
             {`

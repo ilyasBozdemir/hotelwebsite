@@ -36,6 +36,8 @@ export default function Home() {
         <meta name="og:description" content={desc} />
         <meta name="og:type" content="website" />
         <meta charset="utf-8" />
+
+        <meta name="google-site-verification" content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk" />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
         <meta name="description" content={desc} />
@@ -47,11 +49,8 @@ export default function Home() {
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="”canonical”" href="/" />
-        <meta
-          name="google-site-verification"
-          content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
-        />
+        <link rel="canonical" href="/" />
+      
       </Head>
       <Stack as={"main"}>
         <Suspense fallback={<div>Yükleniyor...</div>}>
