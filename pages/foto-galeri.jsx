@@ -8,12 +8,7 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import {
   Stack,
-  Flex,
   Text,
-  Wrap,
-  WrapItem,
-  Image,
-  Box,
 } from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 
