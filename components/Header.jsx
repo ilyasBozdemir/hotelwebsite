@@ -37,32 +37,32 @@ export default function Header(props) {
         justifyContent={"space-around"}
         fontSize={{ base: "12px", md: "15px" }}
       >
-        <HStack spacing={3}>
-          <Icon as={BsFillTelephoneFill} />
-
-       
-          <Link href="tel:+905435403160">
-<button>0543 540 31 60</button>
-</Link>
-        </HStack>
-        <HStack spacing={3}>
-          <Icon as={BsFillTelephoneFill} />
-          <Link href={"tel:+905312486322"} legacyBehavior>
+        <>
+          <HStack as={Link} href="tel:+905435403160" spacing={3}>
+            <Icon as={BsFillTelephoneFill} />
+            <button>0543 540 31 60</button>
+          </HStack>
+        </>
+        <>
+          <HStack as={Link} href="tel:+905312486322" spacing={3}>
+            <Icon as={BsFillTelephoneFill} />
             <button>0531 248 63 22</button>
-          </Link>
-        </HStack>
-        <HStack spacing={3}>
-          <Icon as={FaMapMarkerAlt} />
-          <Link
+          </HStack>
+        </>
+        <>
+          <HStack
+            as={Link}
             href={
               "https://www.google.com/maps/place/G%C3%BCven+Otel/@36.6812645,32.8054781,15z/data=!4m5!3m4!1s0x0:0x50308dc7e9b79f7d!8m2!3d36.6812645!4d32.8054781"
             }
+            spacing={3}
             target="_blank"
             rel="noopener noreferrer"
           >
+            <Icon as={FaMapMarkerAlt} />
             <button>Yol Tarifi</button>
-          </Link>
-        </HStack>
+          </HStack>
+        </>
       </Stack>
       <Divider />
       <HStack
@@ -73,13 +73,30 @@ export default function Header(props) {
         bg={"white"}
       >
         <HStack direction={"row"}>
-          <IconButton
-            variant={"ghost"}
+          <Stack
+            pos={"relative"}
+            alignItems={"center"}
+            cursor="pointer"
+            display={"flex !important"}
+            direction={"column"}
+            overflow={"auto"}
+            px={3}
+            top={"5px"}
+            fontWeight={"semibold"}
             onClick={props.onOpen}
-            icon={<AiOutlineMenu />}
-            display={{ base: "initial", md: "none" }}
-            p={3}
-          />
+          >
+            <Icon
+              pos={"absolute"}
+              display={{ base: "initial", md: "none" }}
+              variant="ghost"
+              aria-label="open menu"
+              as={AiOutlineMenu}
+              bg="transparent"
+              size={'md'}
+            />
+
+            <Text py={1} display={{ base: "initial", md: "none" }} as="small">Menü</Text>
+          </Stack>
 
           <Logo />
         </HStack>

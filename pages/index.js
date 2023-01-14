@@ -26,18 +26,7 @@ export default function Home() {
   const desc = `Otelimiz 26 yataklıdır.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
 
   ReactGA.initialize("G-BP2QER0C4G");
-  const [darkMode, setDarkMode] = React.useState(false);
-
-  const date = new Date();
-
-  React.useEffect(() => {
-    const currentHour = date.getHours();
-    if (currentHour >= 6 && currentHour < 18) {
-      setDarkMode(false);
-    } else {
-      setDarkMode(true);
-    }
-  }, [date.getHours()]);
+  
 
   return (
     <>
@@ -71,24 +60,6 @@ export default function Home() {
       </Head>
       <Stack as={"main"}>
         <Suspense fallback={<div>Yükleniyor...</div>}>
-          <FloatingWhatsApp
-            statusMessage={"genellikle 5 dk içinde cevap verir."}
-            avatar={"/images/hilmi_ilhan.jpg"}
-            accountName={"Güven Otel"}
-            phoneNumber={"+905435403160"}
-            chatMessage={`Merhaba, nasıl yardımcı olabiliriz?`}
-            placeholder={"Mesaj"}
-            messageDelay={1}
-            darkMode={darkMode}
-            allowClickAway={true}
-            allowEsc={true}
-            notification={true}
-            notificationDelay={600}
-            notificationSound={true}
-            notificationLoop={true}
-
-          />
-
           <Hotel />
           <Box bg={"gray.200"}>
             <Center>
