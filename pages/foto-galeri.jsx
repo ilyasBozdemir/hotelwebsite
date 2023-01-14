@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
+import { render } from "react-dom";
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
+
+
 import Head from "next/head";
 
 import Footer from "../components/Footer";
@@ -11,59 +16,71 @@ import {
   WrapItem,
   Image,
   Box,
-  Center,
 } from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 
 function GalleryPage() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+
   var images = [
     {
       src: "/images/otel-dis-gece.jpeg",
-      alt: "3",
+      alt: "otel-dis-gece",
     },
     {
       src: "/images/otel-dis-gunduz.jpg",
-      alt: "3",
+      alt: "otel-dis-gunduz",
     },
     {
       src: "/images/giris.jpeg",
-      alt: "2",
+      alt: "giris",
     },
     {
       src: "/images/giris-2.jpeg",
-      alt: "2",
+      alt: "giris-2",
     },
     {
       src: "/images/giris-3.jpeg",
-      alt: "2",
+      alt: "giris-3",
     },
     {
       src: "/images/kapi.jpeg",
-      alt: "3",
+      alt: "kapi",
     },
     {
       src: "/images/koridor.jpeg",
-      alt: "3",
+      alt: "koridor",
     },
     {
       src: "/images/lavabo-1.jpeg",
-      alt: "3",
+      alt: "lavabo-1",
     },
     {
       src: "/images/lavabo-2.jpeg",
-      alt: "3",
+      alt: "lavabo-2",
     },
     {
       src: "/images/lobi.jpeg",
-      alt: "3",
+      alt: "lobi",
     },
     {
       src: "/images/lobi-2.jpeg",
-      alt: "3",
+      alt: "lobi2",
     },
     {
       src: "/images/manzara.jpeg",
-      alt: "3",
+      alt: "manzara",
     },
     {
       src: "/images/manzara-2.jpeg",
@@ -71,31 +88,31 @@ function GalleryPage() {
     },
     {
       src: "/images/merdiven.jpeg",
-      alt: "3",
+      alt: "merdiven",
     },
     {
       src: "/images/oda.jpeg",
-      alt: "3",
+      alt: "oda",
     },
     {
       src: "/images/oda-1.jpeg",
-      alt: "3",
+      alt: "oda-1",
     },
     {
       src: "/images/oda-2.jpeg",
-      alt: "3",
+      alt: "oda-2",
     },
     {
       src: "/images/oda-3.jpeg",
-      alt: "3",
+      alt: "oda-3",
     },
     {
       src: "/images/oda-4.jpeg",
-      alt: "3",
+      alt: "oda-4",
     },
     {
       src: "/images/oda-5.jpeg",
-      alt: "3",
+      alt: "oda-5",
     },
   ];
 
@@ -121,43 +138,27 @@ function GalleryPage() {
                 <Text>Foto Galeri</Text>
               </BreadcrumbItem>
             </Breadcrumb>
-            <Flex
-              justifyContent={"space-between"}
-              direction={{ base: "column", lg: "row" }}
-              w={"full"}
-              mt={30}
-              display="table"
-            >
-              <>
-                <Wrap
-                  display="table-cell"
-                  verticalAlign="middle"
-                  textAlign="center"
-                >
-                  {images.map((img, i) => (
-                    <WrapItem key={i}>
-                      <Box
-                        boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
-                        border={"10px solid #fff"}
-                        overflow={"hidden"}
-                      >
-                        <Image
-                          w={{ base: 100, md: 200 }}
-                          src={img.src}
-                          alt={img.alt}
-                          transition="all .5s ease-in-out"
-                          _hover={{
-                            transform: "scale(1.50)",
-                          }}
-                        />
-                      </Box>
-                    </WrapItem>
-                  ))}
-                </Wrap>
-              </>
-            </Flex>
           </Stack>
         </>
+
+        <>
+      <Gallery photos={images} onClick={openLightbox} />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={images.map(x => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
+    </>
+
         <Footer />
       </>
     </>
