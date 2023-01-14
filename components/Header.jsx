@@ -55,11 +55,11 @@ export default function Header(props) {
             href={
               "https://www.google.com/maps/place/G%C3%BCven+Otel/@36.6812645,32.8054781,15z/data=!4m5!3m4!1s0x0:0x50308dc7e9b79f7d!8m2!3d36.6812645!4d32.8054781"
             }
-            legacyBehavior
+            as="a"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Text as="a" target="_blank" rel="noopener noreferrer">
-              Yol Tarifi
-            </Text>
+            Yol Tarifi
           </Link>
         </HStack>
       </Stack>

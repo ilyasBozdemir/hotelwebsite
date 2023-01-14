@@ -19,13 +19,25 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 const Hotel = React.lazy(() => import("../components/Hotel"));
 const Footer = React.lazy(() => import("../components/Footer"));
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Home() {
   const desc = `Otelimiz 26 yataklıdır.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
 
-  
-ReactGA.initialize('G-BP2QER0C4G');
+  ReactGA.initialize("G-BP2QER0C4G");
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  const date = new Date();
+
+  React.useEffect(() => {
+    const currentHour = date.getHours();
+    if (currentHour >= 6 && currentHour < 18) {
+      setDarkMode(false);
+    } else {
+      setDarkMode(true);
+    }
+  }, [date.getHours()]);
 
   return (
     <>
@@ -41,9 +53,9 @@ ReactGA.initialize('G-BP2QER0C4G');
         <meta name="og:type" content="website" />
         <meta charset="utf-8" />
         <meta
-            name="google-site-verification"
-            content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
-          />
+          name="google-site-verification"
+          content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
+        />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
         <meta name="description" content={desc} />
@@ -56,12 +68,28 @@ ReactGA.initialize('G-BP2QER0C4G');
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="/" />
-      
       </Head>
       <Stack as={"main"}>
         <Suspense fallback={<div>Yükleniyor...</div>}>
-          <Hotel />
+          <FloatingWhatsApp
+            statusMessage={"genellikle 5 dk içinde cevap verir."}
+            avatar={"/images/hilmi_ilhan.jpg"}
+            accountName={"Güven Otel"}
+            phoneNumber={"+905435403160"}
+            chatMessage={`Merhaba! 🤝Nasıl yardımcı olabiliriz?`}
+            placeholder={"Mesaj"}
+            messageDelay={1}
+            darkMode={darkMode}
+            allowClickAway={true}
+            allowEsc={true}
+            notification={true}
+            notificationDelay={6}
+            notificationSound={true}
+            notificationLoop={false}
+            
+          />
 
+          <Hotel />
           <Box bg={"gray.200"}>
             <Center>
               <Stack
@@ -185,7 +213,6 @@ ReactGA.initialize('G-BP2QER0C4G');
           <Footer />
         </Suspense>
       </Stack>
-      
     </>
   );
 }
