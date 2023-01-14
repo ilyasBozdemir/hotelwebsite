@@ -76,17 +76,17 @@ export default function Home() {
             avatar={"/images/hilmi_ilhan.jpg"}
             accountName={"Güven Otel"}
             phoneNumber={"+905435403160"}
-            chatMessage={`Merhaba! 🤝Nasıl yardımcı olabiliriz?`}
+            chatMessage={`Merhaba, nasıl yardımcı olabiliriz?`}
             placeholder={"Mesaj"}
             messageDelay={1}
             darkMode={darkMode}
             allowClickAway={true}
             allowEsc={true}
             notification={true}
-            notificationDelay={6}
+            notificationDelay={600}
             notificationSound={true}
-            notificationLoop={false}
-            
+            notificationLoop={true}
+
           />
 
           <Hotel />

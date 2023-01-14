@@ -39,14 +39,16 @@ export default function Header(props) {
       >
         <HStack spacing={3}>
           <Icon as={BsFillTelephoneFill} />
-          <Link href={"tel:+905435403160"} legacyBehavior>
-            <Text as="a">0543 540 31 60</Text>
-          </Link>
+
+       
+          <Link href="tel:+905435403160">
+<button>0543 540 31 60</button>
+</Link>
         </HStack>
         <HStack spacing={3}>
           <Icon as={BsFillTelephoneFill} />
           <Link href={"tel:+905312486322"} legacyBehavior>
-            <Text as="a">0531 248 63 22</Text>
+            <button>0531 248 63 22</button>
           </Link>
         </HStack>
         <HStack spacing={3}>
@@ -55,11 +57,10 @@ export default function Header(props) {
             href={
               "https://www.google.com/maps/place/G%C3%BCven+Otel/@36.6812645,32.8054781,15z/data=!4m5!3m4!1s0x0:0x50308dc7e9b79f7d!8m2!3d36.6812645!4d32.8054781"
             }
-            as="a"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Yol Tarifi
+            <button>Yol Tarifi</button>
           </Link>
         </HStack>
       </Stack>
