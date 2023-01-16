@@ -5,16 +5,7 @@ export default function Logo(props) {
   const { colorState = false } = props;
   const date = new Date();
   const currentHour = date.getHours();
-  const [bg, setBg] = React.useState(null);
-
-  React.useEffect(() => {
-    if (currentHour >= 6 && currentHour < 18) {
-      setBg("light");
-    } else {
-      setBg("dark");
-    }
-  }, [currentHour]);
-
+ 
   return (
     <>
       <Text

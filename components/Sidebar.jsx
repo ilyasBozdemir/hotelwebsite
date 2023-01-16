@@ -8,7 +8,6 @@ import {
   FiTrendingUp,
   FiCompass,
   FiStar,
-  FiSettings,
 } from "react-icons/fi";
 
 import NavLink from "./NavLink";

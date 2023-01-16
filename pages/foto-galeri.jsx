@@ -6,10 +6,7 @@ import Head from "next/head";
 
 import Footer from "../components/Footer";
 import Link from "next/link";
-import {
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 
 function GalleryPage() {

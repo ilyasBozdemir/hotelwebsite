@@ -19,14 +19,11 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 const Hotel = React.lazy(() => import("../components/Hotel"));
 const Footer = React.lazy(() => import("../components/Footer"));
-import ReactGA from "react-ga";
+
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Home() {
   const desc = `Otelimiz 26 yataklıdır.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
-
-  ReactGA.initialize("G-BP2QER0C4G");
-  
 
   return (
     <>

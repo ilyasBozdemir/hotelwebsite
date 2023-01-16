@@ -21,10 +21,7 @@ export default function Layout({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh">
-      <Sidebar
-        onClose={() => onClose}
-        display={{ base: "none", md: "none" }}
-      />
+   
       <Drawer
         autoFocus={false}
         isOpen={isOpen}

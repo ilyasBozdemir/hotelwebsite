@@ -1,10 +1,10 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import theme, { roboto } from "../src/theme";
+import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import { ColorModeScript } from "@chakra-ui/react";
-import { Helmet } from "react-helmet";
+
 export default class MyDocument extends Document {
   render() {
     return (
@@ -20,21 +20,6 @@ export default class MyDocument extends Document {
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
 
-          <Helmet>
-            <script>
-              {`
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP2QER0C4G"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', 'G-BP2QER0C4G');
-            </script>
-            `}
-            </script>
-          </Helmet>
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
