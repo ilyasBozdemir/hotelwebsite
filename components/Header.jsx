@@ -53,7 +53,7 @@ export default function Header(props) {
           <HStack
             as={Link}
             href={
-              "https://www.google.com/maps/place/G%C3%BCven+Otel/@36.6812645,32.8054781,15z/data=!4m5!3m4!1s0x0:0x50308dc7e9b79f7d!8m2!3d36.6812645!4d32.8054781"
+              "https://www.google.com/maps?hl=tr&gl=TR&um=1&ie=UTF-8&fb=1&sa=X&geocode=KXUd0-WP69sUMX2ft-nHjTBQ&daddr=G%C3%BCven+Otel,+Oda+Mahallesi+Belediye+Sokak+G%C3%BCneyyurt+Belediyesi+Yan%C4%B1,+70400,+70450+Ermenek/Karaman"
             }
             spacing={3}
             target="_blank"
@@ -92,10 +92,12 @@ export default function Header(props) {
               aria-label="open menu"
               as={AiOutlineMenu}
               bg="transparent"
-              size={'md'}
+              size={"md"}
             />
 
-            <Text py={1} display={{ base: "initial", md: "none" }} as="small">Menü</Text>
+            <Text py={1} display={{ base: "initial", md: "none" }} as="small">
+              Menü
+            </Text>
           </Stack>
 
           <Logo />

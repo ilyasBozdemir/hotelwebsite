@@ -16,10 +16,10 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
           />
+
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
-
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
