@@ -4,8 +4,10 @@ import createEmotionServer from "@emotion/server/create-instance";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import { ColorModeScript } from "@chakra-ui/react";
-
+import { useRouter } from 'next/router'
 export default class MyDocument extends Document {
+
+
   render() {
     return (
       <Html lang="tr">
@@ -17,6 +19,7 @@ export default class MyDocument extends Document {
             content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
           />
           <meta name="emotion-insertion-point" content="" />
+          
           {this.props.emotionStyleTags}
         </Head>
         <body>
@@ -57,6 +60,7 @@ MyDocument.getInitialProps = async (ctx) => {
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));
+
 
   return {
     ...initialProps,

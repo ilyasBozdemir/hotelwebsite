@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Center, Stack, Flex, Heading, HStack, Icon, Box, Image, Text, Button, } from "@chakra-ui/react";
+import { Center, Stack, Flex, Heading, HStack, Icon, Box, Image, Text, } from "@chakra-ui/react";
 import React, { Suspense } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -39,7 +39,6 @@ export default function Home({ message }) {
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="/" />
       </Head>
       <>
         <Suspense fallback={<div>Yükleniyor...</div>}>
@@ -56,11 +55,9 @@ export default function Home({ message }) {
                   fontFamily={"Cursive,Monospace"}
                 >
                   <Center>
-                    <Link href="/hakkimizda">
-                      <Button  fontSize={30} colorScheme="blue" variant="ghost" w={100}>
-                        <>Hakkımızda</>
-                      </Button>
-                    </Link>
+                    <Text colorScheme="blue" fontSize={30}  >
+                      Hakkımızda
+                    </Text>
                   </Center>
                   <Stack
                     as={Flex}

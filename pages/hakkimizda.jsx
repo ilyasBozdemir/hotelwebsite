@@ -96,7 +96,6 @@ function AboutUs() {
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="/hakkimizda" />
       </Head>
       <>
         <Stack>
