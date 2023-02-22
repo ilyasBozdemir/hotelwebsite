@@ -53,11 +53,15 @@ export default function Footer() {
         align={"center"}
       >
         <Link href={"/"} legacyBehavior>
-            <a>
-            <Text cursor={'pointer'} fontSize="3xl" fontFamily={'Georgia'}>Güven Otel</Text>
-            </a>
-          </Link>
-       
+          <a>
+            <Text as='div' cursor={'pointer'} fontSize="3xl" fontFamily={'Georgia'} itemscope itemtype="http://schema.org/Organization" >
+
+              <span itemprop="name">Güven Otel</span>
+
+            </Text>
+          </a>
+        </Link>
+
 
         <Stack direction={"row"} spacing={6}>
           <Link href={"/"} legacyBehavior>
@@ -73,7 +77,7 @@ export default function Footer() {
             <a>İletişim</a>
           </Link>
         </Stack>
-      
+
       </Container>
 
       <Box

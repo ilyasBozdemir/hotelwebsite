@@ -40,13 +40,25 @@ export default function Header(props) {
         <>
           <HStack as={Link} href="tel:+905435403160" spacing={3}>
             <Icon as={BsFillTelephoneFill} />
-            <button>0543 540 31 60</button>
+            <button>
+
+              <div itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="telephone">0543 540 31 60</span>
+              </div>
+
+            </button>
           </HStack>
         </>
         <>
           <HStack as={Link} href="tel:+905312486322" spacing={3}>
             <Icon as={BsFillTelephoneFill} />
-            <button>0531 248 63 22</button>
+            <button>
+
+              <div itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="telephone">0531 248 63 22</span>
+              </div>
+
+            </button>
           </HStack>
         </>
         <>

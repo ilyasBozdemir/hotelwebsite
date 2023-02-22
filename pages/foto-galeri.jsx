@@ -145,7 +145,7 @@ function GalleryPage() {
       height: 4,
     },
   ];
-  const desc = `Otelimiz 26 yataklıdır.1,2 ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
+  const desc = `Güven Oteli'nin fotoğraf galerisi sayfasında, otel hakkında detaylı bilgi alabilir, konforlu odalarımızı ve güzel manzaralarımızı inceleyebilirsiniz. İsterseniz siz de fotoğraf galerimizdeki fotoğrafları görüntüleyebilirsiniz. Ayrıca, iletişim sayfamızda yer alan bilgilerimiz aracılığıyla bize ulaşarak, daha fazla bilgi edinebilirsiniz.`;
 
   return (
     <>
@@ -164,6 +164,7 @@ function GalleryPage() {
           name="google-site-verification"
           content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
         />
+        <meta name="keywords" content="hotel photos, otel fotoğrafları, ermenek otel foto galeri, güneyyurt otel foto galeri, güven otel fotoğrafları" />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
         <meta name="description" content={desc} />

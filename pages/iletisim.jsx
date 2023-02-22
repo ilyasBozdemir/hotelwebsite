@@ -24,7 +24,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 
 function Contact() {
-  const desc = `Otelimiz 26 yataklıdır.1 kişilik,2 kişilik ve 3 kişilik odalarımız mevcuttur.Uzun süreli konaklamalarda fiyatlarda indirim yapılır. Otelimizde Wi-Fi,sıcak su,her odada tv mevcuttur. Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.`;
+  const desc = `Güven Oteli'ne ulaşmak için farklı yöntemlerimiz bulunmaktadır. İletişim sayfamız üzerinden bize mesaj gönderebilir, adres, telefon ve e-posta bilgilerimizi öğrenebilirsiniz. En kısa sürede size yanıt vermekten memnuniyet duyacağız`;
 
   return (
     <>
@@ -43,6 +43,7 @@ function Contact() {
           name="google-site-verification"
           content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
         />
+        <meta name="keywords" content="hotel contact, otel iletişim, ermenek otel iletişim, güneyyurt otel iletişim" />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
         <meta name="description" content={desc} />
@@ -60,7 +61,7 @@ function Contact() {
       <Stack>
         <Stack direction={"column"} mt={10} bg={"gray.200"}>
           <Box w={"full"} h={400} overflow={"hidden"}>
-            <Image src="/images/lobi-2-contact.jpg"  w={'full'}/>
+            <Image src="/images/lobi-2-contact.jpg" w={'full'} />
           </Box>
 
           <Breadcrumb>
@@ -103,20 +104,33 @@ function Contact() {
                     legacyBehavior
                   >
                     <a target="_blank" rel="noopener noreferrer">
-                      Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN
+                      <address itemscope itemtype="http://schema.org/addressRegion">
+                        <span itemprop="addressLocality">
+                          Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN
+                        </span>
+                      </address>
+
                     </a>
                   </Link>
                 </HStack>
                 <HStack>
                   <Icon as={BsFillTelephoneFill} />
                   <Link href={"tel:+905435403160"} legacyBehavior>
-                    <a>0543 540 31 60</a>
+                    <a>
+                      <div itemscope itemtype="http://schema.org/Organization">
+                        <span itemprop="telephone">0543 540 31 60</span>
+                      </div>
+                    </a>
                   </Link>
                 </HStack>
                 <HStack>
                   <Icon as={BsFillTelephoneFill} />
                   <Link href={"tel:+905312486322"} legacyBehavior>
-                    <a>0531 248 63 22</a>
+                    <a>
+                      <div itemscope itemtype="http://schema.org/Organization">
+                        <span itemprop="telephone">0531 248 63 22</span>
+                      </div>
+                    </a>
                   </Link>
                 </HStack>
               </Stack>
@@ -128,7 +142,8 @@ function Contact() {
               ratio={1}
               allowFullcreen
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12798.874711885132!2d32.8054781!3d36.6812645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x50308dc7e9b79f7d!2sG%C3%BCven%20Otel!5e0!3m2!1str!2str!4v1673430130316!5m2!1str!2str"
-              />
+              rel="nofollow"
+            />
           </Flex>
         </Stack>
       </Stack>
