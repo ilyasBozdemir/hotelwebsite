@@ -139,6 +139,7 @@ function Contact() {
             <Stack
               w={{ base: "full", lg: "45%" }}
               as={"iframe"}
+              title={'location of the business on google maps'}
               ratio={1}
               allowFullcreen
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12798.874711885132!2d32.8054781!3d36.6812645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x50308dc7e9b79f7d!2sG%C3%BCven%20Otel!5e0!3m2!1str!2str!4v1673430130316!5m2!1str!2str"
