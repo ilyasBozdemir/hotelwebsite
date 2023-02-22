@@ -67,10 +67,13 @@ function AboutUs() {
   aynı zamanda da doğal güzellikleri keşfetmek isteyenler için mükemmel bir konuma sahip hale getirir.
   Ermenek ve çevresinde gezinti yapmak isteyen misafirlerimize, Turkuaz Baraj Gölünü, Ermenek Devlet Hastanesini, Ermenek Kapalı Cezaevini ve Ermenek ilçesinin tarihi yerlerini ziyaret etmelerini tavsiye ederiz. Bu yerleri ziyaret etmeniz, Ermenek ve çevresinin güzelliklerini keşfetmenizi ve kalınan sürenizi daha keyifli hale getirmesini sağlar.
   Otelimizde konaklamanız sırasında sizlere hizmet vermeye devam edeceğiz.`;
+  
+  const canonicalUrl='https://www.guvenotell.com/hakkimizda';
   return (
     <>
       <Head>
         <title>Hakkımızda • Güven Otel</title>
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Güven Otel" />
         <meta name="twitter:description" content={desc} />
@@ -95,7 +98,7 @@ function AboutUs() {
         <meta name="author" content="ilyas Bozdemir,bozdemir.ib70@gmail.com" />
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+      
       </Head>
       <>
         <Stack>

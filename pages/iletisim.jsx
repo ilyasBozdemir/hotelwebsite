@@ -25,11 +25,12 @@ import Link from "next/link";
 
 function Contact() {
   const desc = `Güven Oteli'ne ulaşmak için farklı yöntemlerimiz bulunmaktadır. İletişim sayfamız üzerinden bize mesaj gönderebilir, adres, telefon ve e-posta bilgilerimizi öğrenebilirsiniz. En kısa sürede size yanıt vermekten memnuniyet duyacağız`;
-
+  const canonicalUrl='https://www.guvenotell.com/iletisim';
   return (
     <>
       <Head>
         <title>İletişim • Güven Otel</title>
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Güven Otel" />
         <meta name="twitter:description" content={desc} />
@@ -54,7 +55,7 @@ function Contact() {
         <meta name="author" content="ilyas Bozdemir,bozdemir.ib70@gmail.com" />
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+       
       </Head>
       <Header />
       <Stack>

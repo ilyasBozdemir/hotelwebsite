@@ -9,10 +9,12 @@ const Footer = React.lazy(() => import("../components/Footer"));
 
 export default function Home({ message }) {
   const desc = `Güven Otel, şık ve sade dekorasyonu ile dikkat çeker. 26 odalı otelimiz, sadece kat hizmeti sunarak konuklarımızın konforlu bir konaklama deneyimi yaşamasını sağlar`;
+  const canonicalUrl='https://www.guvenotell.com/';
   return (
     <>
       <Head>
         <title>Güven Otel</title>
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Güven Otel" />
         <meta name="twitter:description" content={desc} />

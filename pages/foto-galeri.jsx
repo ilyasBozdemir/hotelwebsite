@@ -146,11 +146,12 @@ function GalleryPage() {
     },
   ];
   const desc = `Güven Oteli'nin fotoğraf galerisi sayfasında, otel hakkında detaylı bilgi alabilir, konforlu odalarımızı ve güzel manzaralarımızı inceleyebilirsiniz. İsterseniz siz de fotoğraf galerimizdeki fotoğrafları görüntüleyebilirsiniz. Ayrıca, iletişim sayfamızda yer alan bilgilerimiz aracılığıyla bize ulaşarak, daha fazla bilgi edinebilirsiniz.`;
-
+  const canonicalUrl='https://www.guvenotell.com/foto-galeri';
   return (
     <>
       <Head>
         <title>Foto Galeri • Güven Otel</title>
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Güven Otel" />
         <meta name="twitter:description" content={desc} />
@@ -175,7 +176,6 @@ function GalleryPage() {
         <meta name="author" content="ilyas Bozdemir,bozdemir.ib70@gmail.com" />
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
         <>
