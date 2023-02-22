@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+package-lock.json 
+yarn.lock
+
 # production
 /build
 
