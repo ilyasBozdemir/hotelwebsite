@@ -57,8 +57,8 @@ export default function Home({ message }) {
                 >
                   <Center>
                     <Link href="/hakkimizda">
-                      <Button colorScheme="blue" variant="ghost" w={100}>
-                        Hakkımızda
+                      <Button  fontSize={30} colorScheme="blue" variant="ghost" w={100}>
+                        <>Hakkımızda</>
                       </Button>
                     </Link>
                   </Center>
@@ -79,7 +79,7 @@ export default function Home({ message }) {
                         rounded={5}
                         alt="otel-giris-resim"
                         draggable={false}
-                        src="/images/giris.jpeg"
+                        src="/images/giris.png"
                         w={350}
                       />
                     </Box>

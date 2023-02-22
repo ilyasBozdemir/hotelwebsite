@@ -36,9 +36,9 @@ function Hotel() {
         <Box>
           <TimeBasedImageTimeBasedImage
             // dayImage={"/images/otel-dis-gunduz.jpg"}
-            dayImage={"/images/otel-dis-gunduz.jpg"}
+            dayImage={"/images/otel-dis-gunduz.png"}
             //nightImage={"/images/otel-dis-gunduz.jpg"}
-            nightImage={"/images/otel-dis-gece.jpeg"}
+            nightImage={"/images/otel-dis-gece.png"}
           />
         
         </Box>

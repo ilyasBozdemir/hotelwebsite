@@ -45,7 +45,7 @@ export default function Layout({ children }) {
       </Box>
       <FloatingWhatsApp
             statusMessage={"Genellikle 5 dk içinde cevap veriyor."}
-            avatar={"/images/hilmi_ilhan.jpg"}
+            avatar={"/images/hilmi_ilhan.png"}
             accountName={"Güven Otel"}
             phoneNumber={"+905435403160"}
             chatMessage={`Merhaba, nasıl yardımcı olabiliriz?`}
