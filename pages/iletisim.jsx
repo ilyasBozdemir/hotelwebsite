@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import {
   Stack,
   Flex,
@@ -22,7 +21,6 @@ import {
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
-
 
 const Map = lazy(() => import("../components/Map"));
 
@@ -149,7 +147,6 @@ function Contact() {
           </Stack>
         </Stack>
       </Stack>
-      <Footer />
     </>
   );
 }

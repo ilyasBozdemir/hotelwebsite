@@ -2,7 +2,6 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
-import { Box } from '@chakra-ui/react';
 const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), {
     ssr: false,
 });

@@ -4,9 +4,7 @@ import React, { Suspense } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 const Hotel = React.lazy(() => import("../components/Hotel"));
-const Footer = React.lazy(() => import("../components/Footer"));
 const Map = React.lazy(() => import("../components/Map"));
 
 export default function Home({ message }) {
@@ -15,7 +13,7 @@ export default function Home({ message }) {
   return (
     <>
       <Head>
-        <title>Güven Otel</title>
+        <title>Güven Otel • Rezervasyon 0543 540 31 60</title>
         <link rel="canonical" href={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Güven Otel" />
@@ -164,7 +162,6 @@ export default function Home({ message }) {
                 <Map />
               </Flex>
             </>
-            <Footer />
           </Stack>
         </Suspense>
       </>

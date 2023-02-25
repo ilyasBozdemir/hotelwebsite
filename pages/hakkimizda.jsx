@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { useBreakpointValue } from '@chakra-ui/react'
-import Footer from "../components/Footer";
 import Link from "next/link";
 import {
   Stack,
@@ -20,7 +19,6 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
-
 
 
 function AboutUs() {
@@ -155,7 +153,6 @@ function AboutUs() {
             </Flex>
           </Stack>
         </Stack>
-        <Footer />
       </>
     </>
   );

@@ -1,8 +1,9 @@
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
-import { Box, Drawer, DrawerContent, useDisclosure ,DrawerCloseButton} from "@chakra-ui/react";
+import { Box, Drawer, DrawerContent, useDisclosure, DrawerCloseButton } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../components/Footer";
 export default function Layout({ children }) {
 
   const [darkMode, setDarkMode] = React.useState(false);
@@ -17,11 +18,11 @@ export default function Layout({ children }) {
     }
   }, [date.getHours()]);
 
-  
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh">
-   
+
       <Drawer
         autoFocus={false}
         isOpen={isOpen}
@@ -32,7 +33,7 @@ export default function Layout({ children }) {
         size="sm"
       >
         <DrawerContent>
-        <DrawerCloseButton />
+          <DrawerCloseButton />
           <Sidebar onClose={onClose} />
         </DrawerContent>
       </Drawer>
@@ -42,25 +43,26 @@ export default function Layout({ children }) {
 
       <Box ml={{ base: 0, md: 0 }} >
         {children}
+        <Footer />
       </Box>
       <FloatingWhatsApp
-            statusMessage={"Genellikle 5 dk içinde cevap veriyor."}
-            avatar={"/images/hilmi_ilhan.png"}
-            accountName={"Güven Otel"}
-            phoneNumber={"+905435403160"}
-            chatMessage={`Merhaba, nasıl yardımcı olabiliriz?`}
-            placeholder={"Mesaj"}
-            messageDelay={1}
-            darkMode={darkMode}
-            allowClickAway={true}
-            allowEsc={true}
-            notification={true}
-            notificationDelay={600}
-            notificationSound={true}
-            notificationLoop={true}
-            className={'guven-otel-wp-wrapper'}
+        statusMessage={"Genellikle 5 dk içinde cevap veriyor."}
+        avatar={"/images/hilmi_ilhan.png"}
+        accountName={"Güven Otel"}
+        phoneNumber={"+905435403160"}
+        chatMessage={`Merhaba, nasıl yardımcı olabiliriz?`}
+        placeholder={"Mesaj"}
+        messageDelay={1}
+        darkMode={darkMode}
+        allowClickAway={true}
+        allowEsc={true}
+        notification={true}
+        notificationDelay={600}
+        notificationSound={true}
+        notificationLoop={true}
+        className={'guven-otel-wp-wrapper'}
 
-          />
+      />
     </Box>
   );
 }
