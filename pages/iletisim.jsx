@@ -21,10 +21,11 @@ import {
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
+import { IoMdArrowDropright } from "react-icons/io";
 
 const Map = lazy(() => import("../components/Map"));
 
-function Contact() {
+export default function  Contact() {
   const desc = `Güven Oteli'ne ulaşmak için farklı yöntemlerimiz bulunmaktadır. İletişim sayfamız üzerinden bize mesaj gönderebilir, adres, telefon ve e-posta bilgilerimizi öğrenebilirsiniz. En kısa sürede size yanıt vermekten memnuniyet duyacağız`;
   const canonicalUrl = 'https://www.guvenotell.com/iletisim';
 
@@ -61,14 +62,14 @@ function Contact() {
       </Head>
       <Header />
       <Stack>
-        <Stack direction={"column"} mt={10} >
+        <Stack direction={"column"} mt={20} >
 
-          <Breadcrumb>
+          <Breadcrumb separator={<Icon as={IoMdArrowDropright}  />}>
             <BreadcrumbItem>
               <>
-                <Link href={"/"} legacyBehavior>
+                <BreadcrumbLink as={Link} href={"/"} legacyBehavior>
                   <a>Anasayfa</a>
-                </Link>
+                </BreadcrumbLink>
               </>
             </BreadcrumbItem>
 
@@ -151,4 +152,3 @@ function Contact() {
   );
 }
 
-export default Contact;

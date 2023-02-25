@@ -10,6 +10,7 @@ import {
   Box,
   Image as ChackraImage,
   Text,
+  Icon
 
 } from "@chakra-ui/react";
 import Image from "next/image";
@@ -19,9 +20,10 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
+import { IoMdArrowDropright } from "react-icons/io";
 
 
-function AboutUs() {
+export default function AboutUs() {
   const isMobile = useBreakpointValue({ base: true, md: false })
 
   const Content = () => {
@@ -98,16 +100,14 @@ function AboutUs() {
       </Head>
       <>
         <Stack>
-          <Stack direction={"column"} mt={10} >
+          <Stack direction={"column"} mt={20} >
 
 
-            <Breadcrumb>
+            <Breadcrumb separator={<Icon as={IoMdArrowDropright} />}>
               <BreadcrumbItem>
-                <>
-                  <Link href={"/"} legacyBehavior>
-                    <a>Anasayfa</a>
-                  </Link>
-                </>
+                <BreadcrumbLink as={Link} href={"/"} legacyBehavior>
+                  <a>Anasayfa</a>
+                </BreadcrumbLink>
               </BreadcrumbItem>
 
               <BreadcrumbItem isCurrentPage>
@@ -117,7 +117,6 @@ function AboutUs() {
             <Flex
               mt={30}
             >
-
               <Stack
                 position='relative'
                 fontFamily={"'Playfair Display',sans-serif"}
@@ -127,7 +126,7 @@ function AboutUs() {
                   <Image
                     width={1600}
                     height={1200}
-                    src='/images/giris.png'
+                    src='/images/giris.webp'
                     alt='giriş resmi'
                   />
                 </Box>
@@ -164,5 +163,3 @@ function AboutUs() {
     </>
   );
 }
-
-export default AboutUs;

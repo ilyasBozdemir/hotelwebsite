@@ -4,12 +4,9 @@ import createEmotionServer from "@emotion/server/create-instance";
 import theme from "../src/theme";
 import createEmotionCache from "../src/createEmotionCache";
 import { ColorModeScript } from "@chakra-ui/react";
-import { useRouter } from 'next/router'
-
 export default class MyDocument extends Document {
   render() {
     const { emotionStyleTags } = this.props;
-
     return (
       <Html lang="tr">
         <Head>
@@ -82,10 +79,7 @@ MyDocument.getInitialProps = async (ctx) => {
           return <App emotionCache={cache} {...props} />;
         },
     });
-
   const initialProps = await Document.getInitialProps(ctx);
-
-
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style

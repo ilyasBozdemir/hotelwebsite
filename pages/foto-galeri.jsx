@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import { Button, ButtonGroup, Center } from '@chakra-ui/react'
+import { BreadcrumbLink, Button, ButtonGroup, Center } from '@chakra-ui/react'
 import Head from "next/head";
 import Link from "next/link";
-import { Stack, Text } from "@chakra-ui/react";
+import { Stack, Text, Icon } from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
-
-function GalleryPage() {
+import { IoMdArrowDropright } from "react-icons/io";
+export default function  GalleryPage() {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -23,140 +23,140 @@ function GalleryPage() {
 
   var images = [
     {
-      src: "/images/otel-dis-gece.png",
+      src: "/images/otel-dis-gece.webp",
       alt: "otel-dis-gece",
       width: 4,
       height: 3,
       category: 'genel'
     },
     {
-      src: "/images/otel-dis-gunduz.png",
+      src: "/images/otel-dis-gunduz.webp",
       alt: "otel-dis-gunduz",
       width: 4,
       height: 3,
       category: 'genel'
     },
     {
-      src: "/images/giris.png",
+      src: "/images/giris.webp",
       alt: "giris",
       width: 4,
       height: 3,
       category: 'genel'
     },
     {
-      src: "/images/giris-2.png",
+      src: "/images/giris-2.webp",
       alt: "giris-2",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/giris-3.png",
+      src: "/images/giris-3.webp",
       alt: "giris-3",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/kapi.png",
+      src: "/images/kapi.webp",
       alt: "kapi",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/koridor.png",
+      src: "/images/koridor.webp",
       alt: "koridor",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/lavabo-1.png",
+      src: "/images/lavabo-1.webp",
       alt: "lavabo-1",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/lavabo-2.png",
+      src: "/images/lavabo-2.webp",
       alt: "lavabo-2",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/lobi.png",
+      src: "/images/lobi.webp",
       alt: "lobi",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/lobi-2.png",
+      src: "/images/lobi-2.webp",
       alt: "lobi2",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/manzara.png",
+      src: "/images/manzara.webp",
       alt: "manzara",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/manzara-2.png",
+      src: "/images/manzara-2.webp",
       alt: "3",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/merdiven.png",
+      src: "/images/merdiven.webp",
       alt: "merdiven",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/oda.png",
+      src: "/images/oda.webp",
       alt: "oda",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/oda-1.png",
+      src: "/images/oda-1.webp",
       alt: "oda-1",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/oda-2.png",
+      src: "/images/oda-2.webp",
       alt: "oda-2",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/oda-3.png",
+      src: "/images/oda-3.webp",
       alt: "oda-3",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/oda-4.png",
+      src: "/images/oda-4.webp",
       alt: "oda-4",
       width: 3,
       height: 4,
       category: 'genel'
     },
     {
-      src: "/images/oda-5.png",
+      src: "/images/oda-5.webp",
       alt: "oda-5",
       width: 3,
       height: 4,
@@ -198,12 +198,12 @@ function GalleryPage() {
       <>
         <>
           <Stack direction={"column"} mt={20} bg={"blackAlpha.200"}>
-            <Breadcrumb>
+            <Breadcrumb separator={<Icon as={IoMdArrowDropright} />}>
               <BreadcrumbItem>
                 <>
-                  <Link href={"/"} legacyBehavior>
+                  <BreadcrumbLink as={Link} href={"/"} legacyBehavior>
                     <a>Anasayfa</a>
-                  </Link>
+                  </BreadcrumbLink>
                 </>
               </BreadcrumbItem>
 
@@ -219,13 +219,13 @@ function GalleryPage() {
                 w={{ base: 250, md: 'auto' }}
               >
 
-                <Button colorScheme='teal' variant='outline'>
+                <Button colorScheme='red' variant='outline'>
                   Tümü
                 </Button>
-                <Button colorScheme='teal' variant='outline'>
+                <Button colorScheme='red' variant='outline'>
                   Odalar
                 </Button>
-                <Button colorScheme='teal' variant='outline'>
+                <Button colorScheme='red' variant='outline'>
                   Genel
                 </Button>
 
@@ -252,12 +252,8 @@ function GalleryPage() {
             </>
           </Stack>
         </>
-
-
-
       </>
     </>
   );
 }
 
-export default GalleryPage;

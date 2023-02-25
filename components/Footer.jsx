@@ -19,7 +19,7 @@ import Logo from "./Logo";
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
-    
+
       bgGradient={
         {
           base: 'linear(to-r, gray.100, gray.400)',
@@ -62,18 +62,18 @@ export default function Footer() {
 
         <Logo />
 
-        <Stack direction={"row"} spacing={6}>
-          <Link href={"/"} legacyBehavior>
-            <a>Anasayfa</a>
+        <Stack direction={"row"} spacing={6} >
+          <Link href={"/"} passHref>
+            <Text _hover={{ color: 'gray.600' }}>Anasayfa</Text>
           </Link>
-          <Link href={"/hakkimizda"} legacyBehavior>
-            <a>Hakkımızda</a>
+          <Link href={"/hakkimizda"} passHref>
+            <Text _hover={{ color: 'gray.600' }}>Hakkımızda</Text>
           </Link>
-          <Link href={"/foto-galeri"} legacyBehavior>
-            <a>Foto Galeri</a>
+          <Link href={"/foto-galeri"} passHref>
+            <Text _hover={{ color: 'gray.600' }}>Foto Galeri</Text>
           </Link>
-          <Link href={"/iletisim"} legacyBehavior>
-            <a>İletişim</a>
+          <Link href={"/iletisim"} passHref>
+            <Text _hover={{ color: 'gray.600' }}>İletişim</Text>
           </Link>
         </Stack>
 

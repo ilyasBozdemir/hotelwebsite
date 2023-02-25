@@ -25,8 +25,8 @@ function Hotel() {
 
       <Flex alignItems="center" justifyContent="center" position="relative">
         <TimeBasedImageTimeBasedImage
-          dayImage={"/images/otel-dis-gunduz.png"}
-          nightImage={"/images/otel-dis-gece.png"}
+          dayImage={"/images/otel-dis-gunduz.webp"}
+          nightImage={"/images/otel-dis-gece.webp"}
         />
         <Box
           position="absolute"

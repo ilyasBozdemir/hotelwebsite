@@ -6,7 +6,7 @@ export default function Logo() {
     <>
       <Link href="/" legacyBehavior>
         <a>
-          <Image src="/images/logo.png" alt="hotel logo" width={150} height={50}/>
+          <Image src="/images/logo.webp" alt="hotel logo" width={150} height={50}/>
         </a>
       </Link>
     </>

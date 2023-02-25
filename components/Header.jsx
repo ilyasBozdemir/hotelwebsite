@@ -121,9 +121,9 @@ export default function Header(props) {
           direction={"row"}
           spacing={6}
         >
-          <Link href={"/"} legacyBehavior>
+          <Link href={"/"} passHref>
             <Text
-              as="a"
+              as="span"
               _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
@@ -131,9 +131,9 @@ export default function Header(props) {
               Anasayfa
             </Text>
           </Link>
-          <Link href={"/hakkimizda"} legacyBehavior>
+          <Link href={"/hakkimizda"} passHref>
             <Text
-              as="a"
+              as="span"
               _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
@@ -141,9 +141,9 @@ export default function Header(props) {
               Hakkımızda
             </Text>
           </Link>
-          <Link href={"/foto-galeri"} legacyBehavior>
+          <Link href={"/foto-galeri"} passHref>
             <Text
-              as="a"
+              as="span"
               _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
@@ -151,9 +151,9 @@ export default function Header(props) {
               Foto Galeri
             </Text>
           </Link>
-          <Link href={"/iletisim"} legacyBehavior>
+          <Link href={"/iletisim"} passHref>
             <Text
-              as="a"
+              as="span"
               _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'

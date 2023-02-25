@@ -78,8 +78,9 @@ export default function Home({ message }) {
                         rounded={5}
                         alt="otel-giris-resim"
                         draggable={false}
-                        src="/images/giris.png"
+                        src="/images/giris.webp"
                         w={350}
+                        h={'auto'}
                       />
                     </Box>
                     <Box fontSize="18px" w={{ base: "full", lg: "50%" }} p={5}>
@@ -123,7 +124,7 @@ export default function Home({ message }) {
                     justify={{ base: "space-between" }}
                     p={15}
                   >
-                    <HStack>
+                    <HStack  _hover={{ color: 'gray.600' }}>
                       <Icon as={FaMapMarkerAlt} />
 
                       <Link
@@ -137,7 +138,7 @@ export default function Home({ message }) {
                         </a>
                       </Link>
                     </HStack>
-                    <HStack>
+                    <HStack  _hover={{ color: 'gray.600' }}>
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905435403160"} legacyBehavior>
                         <a>
@@ -147,7 +148,7 @@ export default function Home({ message }) {
                         </a>
                       </Link>
                     </HStack>
-                    <HStack>
+                    <HStack  _hover={{ color: 'gray.600' }}>
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905312486322"} legacyBehavior>
                         <a>
@@ -167,31 +168,4 @@ export default function Home({ message }) {
       </>
     </>
   );
-}
-export async function getServerSideProps() {
-  const baseUrl = 'https://travelpartner.googleapis.com/'
-  const apiKey = 'API_KEY'/* Travel Partner API anahtarı*/
-  const hotelId = 'HOTEL_ID'/* Travel Partner HotelID*/
-
-  try {
-    await updateHotelPrices()
-    return {
-      props:
-      {
-        message: `Fiyatlar başarıyla güncellendi.`
-      }
-    }
-  } catch (error) {
-    return {
-      props:
-      {
-        message: `Fiyat güncelleme hatası: ${error.message}`
-      }
-    }
-  }
-}
-
-async function updateHotelPrices() {
-
-
 }
