@@ -7,12 +7,12 @@ import {
   Flex,
   Heading,
   HStack,
-  Icon,
-  Image,
-  Text,
   Box,
+  Image as ChackraImage,
+  Text,
 
 } from "@chakra-ui/react";
+import Image from "next/image";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -27,14 +27,14 @@ function AboutUs() {
   const Content = () => {
     return (<>
       <Flex
-
         w={'full'}
         p={3}
-        bgGradient={'linear(to-r, gray.200, gray.300)'}
-        color={'black'}
+        bgGradient={{ base: 'linear(to-r, gray.100, gray.400)', md: 'linear(to-r, gray.200, gray.300)' }}
+        color={{ base: 'gray.600', md: 'gray.600' }}
         justifyContent={{ base: 'flex-start', md: 'center' }}
         direction={'column'}
-        boxShadow={'10px 10px 20px 0px rgba(0,0,0,0.75)'}
+        boxShadow={{ md: '10px 10px 20px 0px rgba(0,0,0,0.75)' }}
+
       >
         <Text fontSize={40} fontFamily={'"Times New Roman", Times, serif'}
           fontWeight={'semibold'} textAlign={{ base: 'flex-start', md: 'center' }}>Güven Otel</Text>
@@ -55,8 +55,6 @@ function AboutUs() {
   }
 
   const desc = `Şirin Otel, konaklamanız için idealdir.
-  Otelimiz 26 yataklıdır ve günlük ücreti kişi başı 100 TL'dir.
-  Bu fiyata kahvaltı dahil değildir.
   Otelimizde 1 kişilik, 2 kişilik ve 3 kişilik odalar mevcuttur.
   Uzun süreli konaklamalar için fiyatlarımızda indirim yapılır.
   Otelimizde Wi-Fi, sıcak su ve her odada TV mevcuttur.
@@ -65,8 +63,8 @@ function AboutUs() {
   aynı zamanda da doğal güzellikleri keşfetmek isteyenler için mükemmel bir konuma sahip hale getirir.
   Ermenek ve çevresinde gezinti yapmak isteyen misafirlerimize, Turkuaz Baraj Gölünü, Ermenek Devlet Hastanesini, Ermenek Kapalı Cezaevini ve Ermenek ilçesinin tarihi yerlerini ziyaret etmelerini tavsiye ederiz. Bu yerleri ziyaret etmeniz, Ermenek ve çevresinin güzelliklerini keşfetmenizi ve kalınan sürenizi daha keyifli hale getirmesini sağlar.
   Otelimizde konaklamanız sırasında sizlere hizmet vermeye devam edeceğiz.`;
-  
-  const canonicalUrl='https://www.guvenotell.com/hakkimizda';
+
+  const canonicalUrl = 'https://www.guvenotell.com/hakkimizda';
   return (
     <>
       <Head>
@@ -96,7 +94,7 @@ function AboutUs() {
         <meta name="author" content="ilyas Bozdemir,bozdemir.ib70@gmail.com" />
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      
+
       </Head>
       <>
         <Stack>
@@ -120,8 +118,19 @@ function AboutUs() {
               mt={30}
             >
 
-              <Stack position='relative' fontFamily={"'Playfair Display',sans-serif"}>
-                <Image src='/images/giris.png' alt='about-us' display={{ base: 'none', md: 'initial' }} />
+              <Stack
+                position='relative'
+                fontFamily={"'Playfair Display',sans-serif"}
+              >
+
+                <Box display={{ base: 'none', md: 'initial' }}>
+                  <Image
+                    width={1600}
+                    height={1200}
+                    src='/images/giris.png'
+                    alt='giriş resmi'
+                  />
+                </Box>
                 {
                   isMobile === true ? <>
                     <Box rounded={4} >
@@ -145,8 +154,6 @@ function AboutUs() {
                       </Box>
                     </>
                 }
-
-
 
               </Stack>
 

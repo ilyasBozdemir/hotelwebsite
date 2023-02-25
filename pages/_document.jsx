@@ -8,19 +8,56 @@ import { useRouter } from 'next/router'
 
 export default class MyDocument extends Document {
   render() {
-    const {  emotionStyleTags } = this.props;
+    const { emotionStyleTags } = this.props;
 
     return (
       <Html lang="tr">
         <Head>
-          
+
           <meta name="theme-color" content={"#fff"} />
           <meta
             name="google-site-verification"
             content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
           />
+
           <meta name="emotion-insertion-point" content="" />
           {emotionStyleTags}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
+                {
+                  "@context": "http://schema.org",
+                  "@type": "Organization",
+                  "name": "Güven Otel",
+                  "telephone": [
+                    "+905435403160",
+                    "+05312486322"
+                  ]
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Oda Mahallesi Belediye Sokak Güneyyurt Belediyesi Yanı, 70400, 70450 Ermenek/Karaman",
+                    "addressLocality": "Ermenek",
+                    "postalCode": "70450",
+                    "addressCountry": "TR"
+                  },
+                  "email": "info@guvenotell.com",
+                  "url": "https://www.guvenotell.com/",
+                  "logo": "https://www.guvenotell.com/images/logo.png",
+                  "description": "Firma Adı, örnek işler yapan bir firma...",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": [
+                      "+905435403160",
+                      "+05312486322"
+                    ]
+                    "contactType": "Müşteri Hizmetleri"
+                  },
+                  "openingHours": "Mo-Fr 09:00-22:00"
+                }
+              `
+            }}
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
@@ -48,7 +85,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
   const initialProps = await Document.getInitialProps(ctx);
 
-  
+
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style

@@ -38,7 +38,7 @@ export default function Header(props) {
         fontSize={{ base: "12px", md: "15px" }}
       >
         <>
-          <HStack as={Link} href="tel:+905435403160" spacing={3}>
+          <HStack as={Link} href="tel:+905435403160" spacing={3} _hover={{ color: 'gray.600' }}>
             <Icon as={BsFillTelephoneFill} />
             <button>
 
@@ -50,7 +50,7 @@ export default function Header(props) {
           </HStack>
         </>
         <>
-          <HStack as={Link} href="tel:+905312486322" spacing={3}>
+          <HStack as={Link} href="tel:+905312486322" spacing={3} _hover={{ color: 'gray.600' }}>
             <Icon as={BsFillTelephoneFill} />
             <button>
 
@@ -70,13 +70,14 @@ export default function Header(props) {
             spacing={3}
             target="_blank"
             rel="noopener noreferrer"
+            _hover={{ color: 'gray.600' }}
           >
             <Icon as={FaMapMarkerAlt} />
             <button>Yol Tarifi</button>
           </HStack>
         </>
       </Stack>
-      <Divider orientation='horizontal' bg={'#f70f4d'}/>
+      <Divider orientation='horizontal' bg={'#f70f4d'} />
       <HStack
         as={Flex}
         h={10}
@@ -123,7 +124,7 @@ export default function Header(props) {
           <Link href={"/"} legacyBehavior>
             <Text
               as="a"
-              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
             >
@@ -133,7 +134,7 @@ export default function Header(props) {
           <Link href={"/hakkimizda"} legacyBehavior>
             <Text
               as="a"
-              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
             >
@@ -143,7 +144,7 @@ export default function Header(props) {
           <Link href={"/foto-galeri"} legacyBehavior>
             <Text
               as="a"
-              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
             >
@@ -153,7 +154,7 @@ export default function Header(props) {
           <Link href={"/iletisim"} legacyBehavior>
             <Text
               as="a"
-              _hover={{ borderBottom: "5px solid #26a2e0" }}
+              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
               cursor={"pointer"}
               textTransform='uppercase'
             >

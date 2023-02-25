@@ -1,9 +1,8 @@
 import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-
+import { Button, ButtonGroup, Center } from '@chakra-ui/react'
 import Head from "next/head";
-
 import Link from "next/link";
 import { Stack, Text } from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
@@ -28,124 +27,144 @@ function GalleryPage() {
       alt: "otel-dis-gece",
       width: 4,
       height: 3,
+      category: 'genel'
     },
     {
       src: "/images/otel-dis-gunduz.png",
       alt: "otel-dis-gunduz",
       width: 4,
       height: 3,
+      category: 'genel'
     },
     {
       src: "/images/giris.png",
       alt: "giris",
       width: 4,
       height: 3,
+      category: 'genel'
     },
     {
       src: "/images/giris-2.png",
       alt: "giris-2",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/giris-3.png",
       alt: "giris-3",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/kapi.png",
       alt: "kapi",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/koridor.png",
       alt: "koridor",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/lavabo-1.png",
       alt: "lavabo-1",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/lavabo-2.png",
       alt: "lavabo-2",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/lobi.png",
       alt: "lobi",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/lobi-2.png",
       alt: "lobi2",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/manzara.png",
       alt: "manzara",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/manzara-2.png",
       alt: "3",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/merdiven.png",
       alt: "merdiven",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/oda.png",
       alt: "oda",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/oda-1.png",
       alt: "oda-1",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/oda-2.png",
       alt: "oda-2",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/oda-3.png",
       alt: "oda-3",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/oda-4.png",
       alt: "oda-4",
       width: 3,
       height: 4,
+      category: 'genel'
     },
     {
       src: "/images/oda-5.png",
       alt: "oda-5",
       width: 3,
       height: 4,
+      category: 'genel'
     },
   ];
   const desc = `Güven Oteli'nin fotoğraf galerisi sayfasında, otel hakkında detaylı bilgi alabilir, konforlu odalarımızı ve güzel manzaralarımızı inceleyebilirsiniz. İsterseniz siz de fotoğraf galerimizdeki fotoğrafları görüntüleyebilirsiniz. Ayrıca, iletişim sayfamızda yer alan bilgilerimiz aracılığıyla bize ulaşarak, daha fazla bilgi edinebilirsiniz.`;
-  const canonicalUrl='https://www.guvenotell.com/foto-galeri';
+  const canonicalUrl = 'https://www.guvenotell.com/foto-galeri';
   return (
     <>
       <Head>
@@ -178,7 +197,7 @@ function GalleryPage() {
       </Head>
       <>
         <>
-          <Stack direction={"column"} mt={10} bg={"gray.200"}>
+          <Stack direction={"column"} mt={20} bg={"blackAlpha.200"}>
             <Breadcrumb>
               <BreadcrumbItem>
                 <>
@@ -192,27 +211,50 @@ function GalleryPage() {
                 <Text>Foto Galeri</Text>
               </BreadcrumbItem>
             </Breadcrumb>
+            <Center>
+              <Stack
+                direction={{ base: 'column', md: 'row' }}
+                spacing={4}
+                align={'center'}
+                w={{ base: 250, md: 'auto' }}
+              >
+
+                <Button colorScheme='teal' variant='outline'>
+                  Tümü
+                </Button>
+                <Button colorScheme='teal' variant='outline'>
+                  Odalar
+                </Button>
+                <Button colorScheme='teal' variant='outline'>
+                  Genel
+                </Button>
+
+              </Stack>
+            </Center>
+
+            <>
+              <Gallery photos={images} onClick={openLightbox} />
+              <ModalGateway>
+                {viewerIsOpen ? (
+                  <Modal onClose={closeLightbox}>
+                    <Carousel
+                      currentIndex={currentImage}
+                      views={images.map((x) => ({
+                        ...x,
+                        srcset: x.srcSet,
+                        caption: x.title,
+                        alt: x.alt,
+                      }))}
+                    />
+                  </Modal>
+                ) : null}
+              </ModalGateway>
+            </>
           </Stack>
         </>
 
-        <>
-          <Gallery photos={images} onClick={openLightbox} />
-          <ModalGateway>
-            {viewerIsOpen ? (
-              <Modal onClose={closeLightbox}>
-                <Carousel
-                  currentIndex={currentImage}
-                  views={images.map((x) => ({
-                    ...x,
-                    srcset: x.srcSet,
-                    caption: x.title,
-                    alt: x.alt,
-                  }))}
-                />
-              </Modal>
-            ) : null}
-          </ModalGateway>
-        </>
+
+
       </>
     </>
   );

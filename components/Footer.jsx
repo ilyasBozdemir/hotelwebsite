@@ -19,7 +19,12 @@ import Logo from "./Logo";
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
-      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+    
+      bgGradient={
+        {
+          base: 'linear(to-r, gray.100, gray.400)',
+          md: 'linear(to-r, gray.200, gray.300)'
+        }}
       rounded={"full"}
       w={8}
       h={8}

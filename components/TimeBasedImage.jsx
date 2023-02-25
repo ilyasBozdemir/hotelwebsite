@@ -1,6 +1,5 @@
 import React from "react";
-import { Image } from "@chakra-ui/react";
-
+import Image from "next/image";
 function TimeBasedImageTimeBasedImage({ nightImage, dayImage }) {
   const date = new Date();
   const currentHour = date.getHours();
@@ -13,7 +12,11 @@ function TimeBasedImageTimeBasedImage({ nightImage, dayImage }) {
 
   return (
     <>
-      <Image src={imageUrl} alt="Guven-otel" w='full' />
+      <Image
+        src={imageUrl}
+        alt="Guven-otel"
+        width={1600}
+        height={1200} />
     </>
   );
 }
