@@ -1,21 +1,11 @@
 import {
-  Box,
-  Stack,
-  Text,
-  Flex,
-  HStack,
-  Icon,
-  Divider,
+  Flex, Box
 } from "@chakra-ui/react";
-import React from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
-import Logo from './Logo'
-import { useState } from "react";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaMapMarkerAlt } from "react-icons/fa";
 
-
+import ReservationButton from "./ReservationButton";
+import { motion } from "framer-motion";
 function Hotel() {
   const date = new Date();
   const currentHour = date.getHours();
@@ -32,17 +22,40 @@ function Hotel() {
 
   return (
     <>
-      <Box pos={"relative"}>
-        <Box>
-          <TimeBasedImageTimeBasedImage
-            // dayImage={"/images/otel-dis-gunduz.jpg"}
-            dayImage={"/images/otel-dis-gunduz.png"}
-            //nightImage={"/images/otel-dis-gunduz.jpg"}
-            nightImage={"/images/otel-dis-gece.png"}
-          />
-        
+
+      <Flex alignItems="center" justifyContent="center" position="relative">
+        <TimeBasedImageTimeBasedImage
+          dayImage={"/images/otel-dis-gunduz.png"}
+          nightImage={"/images/otel-dis-gece.png"}
+        />
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          width="100%"
+          height="100%"
+          bg="blackAlpha.500"
+          opacity="0.7"
+        />
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          textAlign="center"
+          zIndex="1"
+        >
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ReservationButton />
+          </motion.div>
+
         </Box>
-      </Box>
+
+      </Flex>
     </>
   );
 }

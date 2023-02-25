@@ -4,12 +4,14 @@ import React, { Suspense } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 const Hotel = React.lazy(() => import("../components/Hotel"));
 const Footer = React.lazy(() => import("../components/Footer"));
+const Map = React.lazy(() => import("../components/Map"));
 
 export default function Home({ message }) {
   const desc = `Güven Otel, şık ve sade dekorasyonu ile dikkat çeker. 26 odalı otelimiz, sadece kat hizmeti sunarak konuklarımızın konforlu bir konaklama deneyimi yaşamasını sağlar`;
-  const canonicalUrl='https://www.guvenotell.com/';
+  const canonicalUrl = 'https://www.guvenotell.com/';
   return (
     <>
       <Head>
@@ -104,8 +106,6 @@ export default function Home({ message }) {
                 </Stack>
               </Center>
             </Box>
-
-
             <>
               <Flex
                 as="section"
@@ -161,18 +161,7 @@ export default function Home({ message }) {
                     </HStack>
                   </Stack>
                 </Stack>
-
-                <Stack
-                  w={{ base: "full", lg: "45%" }}
-                  as={"iframe"}
-                  ratio={1}
-                  allowFullcreen
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12798.874711885132!2d32.8054781!3d36.6812645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x50308dc7e9b79f7d!2sG%C3%BCven%20Otel!5e0!3m2!1str!2str!4v1673430130316!5m2!1str!2str"
-                  rel="nofollow"
-                  title={'location of the business on google maps'}
-                />
+                <Map />
               </Flex>
             </>
             <Footer />
@@ -209,4 +198,3 @@ async function updateHotelPrices() {
 
 
 }
-

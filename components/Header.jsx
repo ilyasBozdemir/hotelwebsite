@@ -76,7 +76,7 @@ export default function Header(props) {
           </HStack>
         </>
       </Stack>
-      <Divider />
+      <Divider orientation='horizontal' bg={'#f70f4d'}/>
       <HStack
         as={Flex}
         h={10}
@@ -125,6 +125,7 @@ export default function Header(props) {
               as="a"
               _hover={{ borderBottom: "5px solid #26a2e0" }}
               cursor={"pointer"}
+              textTransform='uppercase'
             >
               Anasayfa
             </Text>
@@ -134,6 +135,7 @@ export default function Header(props) {
               as="a"
               _hover={{ borderBottom: "5px solid #26a2e0" }}
               cursor={"pointer"}
+              textTransform='uppercase'
             >
               Hakkımızda
             </Text>
@@ -143,6 +145,7 @@ export default function Header(props) {
               as="a"
               _hover={{ borderBottom: "5px solid #26a2e0" }}
               cursor={"pointer"}
+              textTransform='uppercase'
             >
               Foto Galeri
             </Text>
@@ -152,6 +155,7 @@ export default function Header(props) {
               as="a"
               _hover={{ borderBottom: "5px solid #26a2e0" }}
               cursor={"pointer"}
+              textTransform='uppercase'
             >
               İletişim
             </Text>

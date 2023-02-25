@@ -1,23 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { Text } from "@chakra-ui/react";
-export default function Logo(props) {
-  const { colorState = false } = props;
-  const date = new Date();
-  const currentHour = date.getHours();
- 
+import Image  from "next/image";
+export default function Logo() {
   return (
     <>
-      <Text
-        color={"black"}
-        fontSize={"25px"}
-        fontFamily={"Georgia"}
-        cursor={"pointer"}
-      >
-        <Link href={"/"} legacyBehavior>
-          <a>Güven Otel</a>
-        </Link>
-      </Text>
+      <Link href="/" legacyBehavior>
+        <a>
+          <Image src="/images/logo.png" alt="hotel logo" width={150} height={50}/>
+        </a>
+      </Link>
     </>
   );
 }

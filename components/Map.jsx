@@ -2,6 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+import { Box } from '@chakra-ui/react';
 const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), {
     ssr: false,
 });
@@ -19,20 +20,17 @@ function Map() {
         [36.680261, 32.807540],
     ]);
     const [map, setMap] = React.useState(null);
-
     React.useEffect(() => {
         if (!map) {
             setMap(
-                <div style={{ height: '250px', width: '100%' }}>
+                <div >
                     <MapContainer
                         center={positions[0]}
                         zoom={14}
                         style={{ height: '100%', width: '100%' }}
                         whenCreated={setMap}
                     >
-                        <TileLayer
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                         {positions.map((position, index) => (
                             <Marker key={index} position={position}>
                                 <Popup >Güven Otel</Popup>
@@ -43,7 +41,6 @@ function Map() {
             );
         }
     }, []);
-
     return <>{map}</>;
 }
 

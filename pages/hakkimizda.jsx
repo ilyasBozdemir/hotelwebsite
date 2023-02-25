@@ -123,7 +123,7 @@ function AboutUs() {
             >
 
               <Stack position='relative' fontFamily={"'Playfair Display',sans-serif"}>
-                <Image src='/images/giris.jpeg' alt='about-us' display={{ base: 'none', md: 'initial' }} />
+                <Image src='/images/giris.png' alt='about-us' display={{ base: 'none', md: 'initial' }} />
                 {
                   isMobile === true ? <>
                     <Box rounded={4} >

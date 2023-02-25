@@ -9,10 +9,12 @@ import {
   VisuallyHidden,
   Flex,
   HStack,
+  Divider,
 } from "@chakra-ui/react";
 
 
 import Link from "next/link";
+import Logo from "./Logo";
 
 const SocialButton = ({ children, label, href }) => {
   return (
@@ -52,16 +54,8 @@ export default function Footer() {
         justify={"center"}
         align={"center"}
       >
-        <Link href={"/"} legacyBehavior>
-          <a>
-            <Text as='div' cursor={'pointer'} fontSize="3xl" fontFamily={'Georgia'} itemscope itemtype="http://schema.org/Organization" >
 
-              <span itemprop="name">Güven Otel</span>
-
-            </Text>
-          </a>
-        </Link>
-
+        <Logo />
 
         <Stack direction={"row"} spacing={6}>
           <Link href={"/"} legacyBehavior>

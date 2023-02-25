@@ -1,8 +1,7 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
 import {
   Stack,
   Flex,
@@ -12,6 +11,7 @@ import {
   Image,
   Text,
   Box,
+  Center
 } from "@chakra-ui/react";
 import {
   Breadcrumb,
@@ -23,9 +23,13 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 
+
+const Map = lazy(() => import("../components/Map"));
+
 function Contact() {
   const desc = `Güven Oteli'ne ulaşmak için farklı yöntemlerimiz bulunmaktadır. İletişim sayfamız üzerinden bize mesaj gönderebilir, adres, telefon ve e-posta bilgilerimizi öğrenebilirsiniz. En kısa sürede size yanıt vermekten memnuniyet duyacağız`;
-  const canonicalUrl='https://www.guvenotell.com/iletisim';
+  const canonicalUrl = 'https://www.guvenotell.com/iletisim';
+
   return (
     <>
       <Head>
@@ -55,14 +59,11 @@ function Contact() {
         <meta name="author" content="ilyas Bozdemir,bozdemir.ib70@gmail.com" />
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-       
+
       </Head>
       <Header />
       <Stack>
-        <Stack direction={"column"} mt={10} bg={"gray.200"}>
-          <Box w={"full"} h={400} overflow={"hidden"}>
-            <Image src="/images/lobi-2-contact.jpg" w={'full'} />
-          </Box>
+        <Stack direction={"column"} mt={10} >
 
           <Breadcrumb>
             <BreadcrumbItem>
@@ -77,75 +78,75 @@ function Contact() {
               <Text>İletisim</Text>
             </BreadcrumbItem>
           </Breadcrumb>
-          <Flex
-            justifyContent={"space-between"}
-            direction={{ base: "column", lg: "row" }}
-            w={"full"}
-            h={{ base: "350px", lg: "250px" }}
-            mt={30}
-          >
-            <Stack w={{ base: "full", lg: "45%" }}>
-              <Heading as="h2" size="xl">
-                İletişim Bilgileri
-              </Heading>
-              <Stack
-                spacing={6}
-                direction={{ base: "column" }}
-                justify={{ base: "space-between" }}
-                p={15}
+
+          <Stack>
+            <>
+              <Suspense fallback={<div>Loading...</div>}>
+                <Box zIndex={1} h={250} w={'100%'}>
+                  <Map />
+                </Box>
+              </Suspense>
+            </>
+            <>
+              <Flex
+                justifyContent={"center"}
+                w={"full"}
+                mt={30}
               >
-                <HStack>
-                  <Icon as={FaMapMarkerAlt} />
-
-                  <Link
-                    href={
-                      "https://goo.gl/maps/vUpGnwWD99PahxJJA"
-                    }
-                    legacyBehavior
+                <Stack boxShadow={'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;'}>
+                  <Heading as="h6" size="md">
+                    İletişim Bilgileri
+                  </Heading>
+                  <Stack
+                    spacing={6}
+                    direction={{ base: "column" }}
+                    justify={{ base: "space-between" }}
+                    p={15}
                   >
-                    <a target="_blank" rel="noopener noreferrer">
-                      <address itemscope itemtype="http://schema.org/addressRegion">
-                        <span itemprop="addressLocality">
-                          Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN
-                        </span>
-                      </address>
+                    <HStack>
+                      <Icon as={FaMapMarkerAlt} />
 
-                    </a>
-                  </Link>
-                </HStack>
-                <HStack>
-                  <Icon as={BsFillTelephoneFill} />
-                  <Link href={"tel:+905435403160"} legacyBehavior>
-                    <a>
-                      <div itemscope itemtype="http://schema.org/Organization">
-                        <span itemprop="telephone">0543 540 31 60</span>
-                      </div>
-                    </a>
-                  </Link>
-                </HStack>
-                <HStack>
-                  <Icon as={BsFillTelephoneFill} />
-                  <Link href={"tel:+905312486322"} legacyBehavior>
-                    <a>
-                      <div itemscope itemtype="http://schema.org/Organization">
-                        <span itemprop="telephone">0531 248 63 22</span>
-                      </div>
-                    </a>
-                  </Link>
-                </HStack>
-              </Stack>
-            </Stack>
+                      <Link
+                        href={
+                          "https://goo.gl/maps/vUpGnwWD99PahxJJA"
+                        }
+                        legacyBehavior
+                      >
+                        <a target="_blank" rel="noopener noreferrer">
+                          <address itemscope itemtype="http://schema.org/addressRegion">
+                            <span itemprop="addressLocality">
+                              Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN
+                            </span>
+                          </address>
 
-            <Stack
-              w={{ base: "full", lg: "45%" }}
-              as={"iframe"}
-              title={'location of the business on google maps'}
-              ratio={1}
-              allowFullcreen
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12798.874711885132!2d32.8054781!3d36.6812645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x50308dc7e9b79f7d!2sG%C3%BCven%20Otel!5e0!3m2!1str!2str!4v1673430130316!5m2!1str!2str"
-              rel="nofollow"
-            />
-          </Flex>
+                        </a>
+                      </Link>
+                    </HStack>
+                    <HStack>
+                      <Icon as={BsFillTelephoneFill} />
+                      <Link href={"tel:+905435403160"} legacyBehavior>
+                        <a>
+                          <div itemscope itemtype="http://schema.org/Organization">
+                            <span itemprop="telephone">0543 540 31 60</span>
+                          </div>
+                        </a>
+                      </Link>
+                    </HStack>
+                    <HStack>
+                      <Icon as={BsFillTelephoneFill} />
+                      <Link href={"tel:+905312486322"} legacyBehavior>
+                        <a>
+                          <div itemscope itemtype="http://schema.org/Organization">
+                            <span itemprop="telephone">0531 248 63 22</span>
+                          </div>
+                        </a>
+                      </Link>
+                    </HStack>
+                  </Stack>
+                </Stack>
+              </Flex>
+            </>
+          </Stack>
         </Stack>
       </Stack>
       <Footer />
