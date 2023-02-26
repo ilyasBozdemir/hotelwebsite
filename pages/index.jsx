@@ -6,7 +6,6 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 const Hotel = React.lazy(() => import("../components/Hotel"));
 const Map = React.lazy(() => import("../components/Map"));
-const ParallaxComponent = React.lazy(() => import("../components/ParallaxComponent"));
 
 export default function Home({ message }) {
   const desc = `Güven Otel, şık ve sade dekorasyonu ile dikkat çeker. 26 odalı otelimiz, sadece kat hizmeti sunarak konuklarımızın konforlu bir konaklama deneyimi yaşamasını sağlar`;
@@ -55,7 +54,6 @@ export default function Home({ message }) {
                   maxW={"container.xl"}
                   boxShadow={"0 0 30px 0 rgb(33 30 25 / 10%)"}
                   spacing={10}
-                  fontFamily={"Cursive,Monospace"}
                 >
                   <Center>
                     <Text colorScheme="blue" fontSize={30}  >

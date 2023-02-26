@@ -28,7 +28,9 @@ function Hotel() {
           dayImage={"/images/otel-dis-gunduz.webp"}
           nightImage={"/images/otel-dis-gece.webp"}
         />
-        <Box
+        {
+          /* 
+            <Box
           position="absolute"
           top="0"
           left="0"
@@ -54,6 +56,9 @@ function Hotel() {
             </motion.div>
           </Box>
         </Box>
+           */
+        }
+     
       </Flex>
     </>
   );
