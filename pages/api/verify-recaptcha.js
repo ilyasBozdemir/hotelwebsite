@@ -1,22 +1,15 @@
-
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
 import axios from 'axios';
 
-import getConfig from 'next/config';
-
-const { serverRuntimeConfig } = getConfig();
-
-const reCAPTCHA_SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
-const rECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
-
 export default async function handler(req, res) {
+
+    const reCAPTCHA_SITE_KEY = '6LfnlrUkAAAAAJMulQJD5oU_3_vj6Xrp-i_PUj6M'
+    const rECAPTCHA_SECRET_KEY = '6LfnlrUkAAAAAKr7ZwUui7k3tT4RyBJ7xxjdNWOq'
+
     if (req.method === 'POST') {
         const { recaptchaToken } = req.body;
 
         const response = await axios.post(
             `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
-            {},
             {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'

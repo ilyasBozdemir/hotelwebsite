@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-require('dotenv').config();
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -13,8 +12,6 @@ module.exports = withBundleAnalyzer({
   productionBrowserSourceMaps: true,
   // publicRuntimeConfig: {},
   //serverRuntimeConfig: {},
-  reCAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
-  rECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
   async rewrites() {
     return [
       {

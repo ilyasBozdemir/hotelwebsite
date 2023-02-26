@@ -46,7 +46,7 @@ export default function Layout({ children }) {
         <Footer />
       </Box>
       <FloatingWhatsApp
-        statusMessage={"Genellikle 5 dk içinde cevap veriyor."}
+        statusMessage={"Genellikle 2-3 dk içinde cevap veriyor."}
         avatar={"/images/hilmi_ilhan.webp"}
         accountName={"Güven Otel"}
         phoneNumber={"+905435403160"}
@@ -61,7 +61,6 @@ export default function Layout({ children }) {
         notificationSound={true}
         notificationLoop={true}
         className={'guven-otel-wp-wrapper'}
-
       />
     </Box>
   );

@@ -2,10 +2,12 @@ import { Flex, FormControl, FormLabel, Input, Textarea, Button, HStack, Heading,
 import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
+
 export default function ContactForm() {
 
-    const reCAPTCHA_SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
-    const rECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+    const reCAPTCHA_SITE_KEY = '6LfnlrUkAAAAAJMulQJD5oU_3_vj6Xrp-i_PUj6M'
+    const rECAPTCHA_SECRET_KEY = '6LfnlrUkAAAAAKr7ZwUui7k3tT4RyBJ7xxjdNWOq'
+
     const [formData, setFormData] = React.useState({
         name: '',
         surname: '',

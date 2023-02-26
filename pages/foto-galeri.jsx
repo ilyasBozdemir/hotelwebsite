@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { BreadcrumbLink, Button, ButtonGroup, Center } from '@chakra-ui/react'
@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Stack, Text, Icon } from "@chakra-ui/react";
 import { Breadcrumb, BreadcrumbItem } from "@chakra-ui/react";
 import { IoMdArrowDropright } from "react-icons/io";
-export default function  GalleryPage() {
+export default function GalleryPage() {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -20,6 +20,10 @@ export default function  GalleryPage() {
     setCurrentImage(0);
     setViewerIsOpen(false);
   };
+  const handleCategoryClick = (newCategory) => {
+    setCategory(newCategory);
+  };
+
 
   var images = [
     {
@@ -41,63 +45,63 @@ export default function  GalleryPage() {
       alt: "giris",
       width: 4,
       height: 3,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/giris-2.webp",
       alt: "giris-2",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/giris-3.webp",
       alt: "giris-3",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/kapi.webp",
       alt: "kapi",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/koridor.webp",
       alt: "koridor",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/lavabo-1.webp",
       alt: "lavabo-1",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/lavabo-2.webp",
       alt: "lavabo-2",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/lobi.webp",
       alt: "lobi",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/lobi-2.webp",
       alt: "lobi2",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/manzara.webp",
@@ -118,51 +122,73 @@ export default function  GalleryPage() {
       alt: "merdiven",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/oda.webp",
       alt: "oda",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/oda-1.webp",
       alt: "oda-1",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/oda-2.webp",
       alt: "oda-2",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/oda-3.webp",
       alt: "oda-3",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/oda-4.webp",
       alt: "oda-4",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
     {
       src: "/images/oda-5.webp",
       alt: "oda-5",
       width: 3,
       height: 4,
-      category: 'genel'
+      category: 'oda'
     },
   ];
+  const [category, setCategory] = useState("Tümü");
+  const [categoryImages, setCategoryImages] = useState([])
+  const [generalImages, setGeneralImages] = useState([]);
+  const [roomImages, setRoomImages] = useState([]);
+  useEffect(() => {
+    const allImages = [...images];
+    const general = images.filter((image) => image.category === 'genel');
+    const room = images.filter((image) => image.category === 'oda');
+
+    setCategoryImages(allImages);
+    setGeneralImages(general);
+    setRoomImages(room);
+  }, []);
+  useEffect(() => {
+    if (category === "Tümü") {
+      setCategoryImages(images);
+    } else if (category === "Oda") {
+      setCategoryImages(roomImages);
+    } else if (category === "Genel") {
+      setCategoryImages(generalImages);
+    }
+  }, [category]);
   const desc = `Güven Oteli'nin fotoğraf galerisi sayfasında, otel hakkında detaylı bilgi alabilir, konforlu odalarımızı ve güzel manzaralarımızı inceleyebilirsiniz. İsterseniz siz de fotoğraf galerimizdeki fotoğrafları görüntüleyebilirsiniz. Ayrıca, iletişim sayfamızda yer alan bilgilerimiz aracılığıyla bize ulaşarak, daha fazla bilgi edinebilirsiniz.`;
   const canonicalUrl = 'https://www.guvenotell.com/foto-galeri';
   return (
@@ -219,13 +245,13 @@ export default function  GalleryPage() {
                 w={{ base: 250, md: 'auto' }}
               >
 
-                <Button colorScheme='red' variant='outline'>
+                <Button colorScheme='red' variant='outline' onClick={() => handleCategoryClick("Tümü")}>
                   Tümü
                 </Button>
-                <Button colorScheme='red' variant='outline'>
+                <Button colorScheme='red' variant='outline' onClick={() => handleCategoryClick("Oda")}>
                   Odalar
                 </Button>
-                <Button colorScheme='red' variant='outline'>
+                <Button colorScheme='red' variant='outline' onClick={() => handleCategoryClick("Genel")}>
                   Genel
                 </Button>
 
@@ -233,13 +259,13 @@ export default function  GalleryPage() {
             </Center>
 
             <>
-              <Gallery photos={images} onClick={openLightbox} />
+              <Gallery photos={categoryImages} onClick={openLightbox} />
               <ModalGateway>
                 {viewerIsOpen ? (
                   <Modal onClose={closeLightbox}>
                     <Carousel
                       currentIndex={currentImage}
-                      views={images.map((x) => ({
+                      views={categoryImages.map((x) => ({
                         ...x,
                         srcset: x.srcSet,
                         caption: x.title,

@@ -16,7 +16,8 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
           />
-         
+          <link rel="icon" href="/favicon.ico" />
+          
           <meta name="emotion-insertion-point" content="" />
           {emotionStyleTags}
 

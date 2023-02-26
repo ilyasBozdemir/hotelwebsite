@@ -16,8 +16,9 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { LinkItems } from "../constants/LinkItems";
-
+import { useRouter } from "next/router";
 export default function Header(props) {
+  const router = useRouter();
   const linkHoverStyles = {
     transition: "transform 0.2s ease-in-out",
     transform: "scale(1)",
@@ -134,10 +135,11 @@ export default function Header(props) {
         >
           {LinkItems.map((link, i) => (
             <>
-              <Link key={i} href={link.href} passHref>
+              <Link key={i} href={link.href} shallow passHref >
                 <Text
                   as="span"
-                  _hover={{ color: '#fa3628' }}
+                  _hover={{ opacity: 0.8 }}
+                  color={router.pathname === link.href ? "#fa3628" : "gray.600"}
                   cursor={"pointer"}
                   textTransform='uppercase'
                   fontWeight={'semibold'}
