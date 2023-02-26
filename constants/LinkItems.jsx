@@ -32,4 +32,5 @@ export const LinkItems = [
     icon: GrContactInfo,
     href: "/iletisim"
   },
+  
 ];

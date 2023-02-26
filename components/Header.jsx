@@ -1,11 +1,8 @@
 import {
-  Box,
   Stack,
   Text,
   Flex,
   HStack,
-  Button,
-  IconButton,
   Divider,
   Icon,
 } from "@chakra-ui/react";
@@ -17,6 +14,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { LinkItems } from "../constants/LinkItems";
 import { useRouter } from "next/router";
+import OnlineReservationButton from "./OnlineReservationButton";
 export default function Header(props) {
   const router = useRouter();
   const linkHoverStyles = {
@@ -99,6 +97,7 @@ export default function Header(props) {
       >
         <HStack direction={"row"}>
           <Stack
+            as={Flex}
             pos={"relative"}
             alignItems={"center"}
             cursor="pointer"
@@ -124,10 +123,13 @@ export default function Header(props) {
               Menü
             </Text>
           </Stack>
-
           <Logo />
         </HStack>
 
+        <Stack display={{ base: "initial", md: "none" }}
+          direction={"row"}>
+          <OnlineReservationButton />
+        </Stack>
         <Stack
           display={{ base: "none", md: "initial" }}
           direction={"row"}
@@ -150,8 +152,11 @@ export default function Header(props) {
               </Link>
             </>
           ))}
-
+          <>
+            <OnlineReservationButton />
+          </>
         </Stack>
+
       </HStack>
     </Stack>
   );

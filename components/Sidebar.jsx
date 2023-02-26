@@ -24,7 +24,7 @@ export default function Sidebar({ onClose, ...rest }) {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       <Divider />
-      <Stack>
+      <Stack ml={3}>
         {LinkItems.map((link, i) => (
           <NavLink key={i} link={link} />
         ))}

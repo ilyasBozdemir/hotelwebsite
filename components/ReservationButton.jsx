@@ -11,7 +11,7 @@ const ReservationButton = () => {
     >
       <Button size={{ base: "sm", md: "lg" }} colorScheme={'red'}>
         <MotionText
-          fontSize={{ base: "xl", md: "3xl" }}
+          fontSize={{ base: "xl", md: "2xl" }}
           fontWeight="bold"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}

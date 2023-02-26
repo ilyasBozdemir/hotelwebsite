@@ -36,25 +36,24 @@ function Hotel() {
           height="100%"
           bg="blackAlpha.500"
           opacity="0.7"
-        />
-        <Box
-          position="absolute"
-          top="50%"
-          left="50%"
-          transform="translate(-50%, -50%)"
-          textAlign="center"
-          zIndex="1"
         >
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ duration: 0.2 }}
+          <Box
+            position="absolute"
+            top="50%"
+            left="50%"
+            transform="translate(-50%, -50%)"
+            textAlign="center"
+            zIndex="1"
           >
-            <ReservationButton />
-          </motion.div>
-
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ReservationButton />
+            </motion.div>
+          </Box>
         </Box>
-
       </Flex>
     </>
   );
