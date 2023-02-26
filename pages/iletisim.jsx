@@ -7,25 +7,31 @@ import {
   Heading,
   HStack,
   Icon,
-  Image,
   Text,
   Box,
-  Center
 } from "@chakra-ui/react";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
 } from "@chakra-ui/react";
+
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from '@chakra-ui/react'
+
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
+import ContactForm from "../components/ContactForm";
 
 const Map = lazy(() => import("../components/Map"));
 
-export default function  Contact() {
+export default function Contact() {
   const desc = `Güven Oteli'ne ulaşmak için farklı yöntemlerimiz bulunmaktadır. İletişim sayfamız üzerinden bize mesaj gönderebilir, adres, telefon ve e-posta bilgilerimizi öğrenebilirsiniz. En kısa sürede size yanıt vermekten memnuniyet duyacağız`;
   const canonicalUrl = 'https://www.guvenotell.com/iletisim';
 
@@ -59,12 +65,13 @@ export default function  Contact() {
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+
       </Head>
       <Header />
       <Stack>
         <Stack direction={"column"} mt={20} >
 
-          <Breadcrumb separator={<Icon as={IoMdArrowDropright}  />}>
+          <Breadcrumb separator={<Icon as={IoMdArrowDropright} />}>
             <BreadcrumbItem>
               <>
                 <BreadcrumbLink as={Link} href={"/"} legacyBehavior>
@@ -88,11 +95,16 @@ export default function  Contact() {
             </>
             <>
               <Flex
-                justifyContent={"center"}
                 w={"full"}
-                mt={30}
+                p={3}
+                m={5}
+                direction={{ base: 'column', md: 'row' }}
+                justifyContent={'space-between'}
               >
-                <Stack boxShadow={'rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;'}>
+                <Stack
+                  boxShadow={'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'}
+                  flexShrink={0}
+                >
                   <Heading as="h6" size="md">
                     İletişim Bilgileri
                   </Heading>
@@ -125,9 +137,9 @@ export default function  Contact() {
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905435403160"} legacyBehavior>
                         <a>
-                          <div itemscope itemtype="http://schema.org/Organization">
+                          <Text as='div' color={'blue.500'} fontWeight={'bold'} itemscope itemtype="http://schema.org/Organization">
                             <span itemprop="telephone">0543 540 31 60</span>
-                          </div>
+                          </Text>
                         </a>
                       </Link>
                     </HStack>
@@ -135,13 +147,19 @@ export default function  Contact() {
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905312486322"} legacyBehavior>
                         <a>
-                          <div itemscope itemtype="http://schema.org/Organization">
+                          <Text as='div' color={'blue.500'} fontWeight={'bold'} itemscope itemtype="http://schema.org/Organization">
                             <span itemprop="telephone">0531 248 63 22</span>
-                          </div>
+                          </Text>
                         </a>
                       </Link>
                     </HStack>
                   </Stack>
+                </Stack>
+                <Stack
+                  boxShadow={'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'}>
+                  <>
+                    <ContactForm />
+                  </>
                 </Stack>
               </Flex>
             </>

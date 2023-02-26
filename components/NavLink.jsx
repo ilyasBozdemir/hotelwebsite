@@ -28,6 +28,7 @@ export default function NavLink({ link, ...rest }) {
                 color: "white",
               }}
               as={icon}
+              color={'black'}
             />
           )}
           <Text fontSize="1.2rem">{label}</Text>

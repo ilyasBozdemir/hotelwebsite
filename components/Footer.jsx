@@ -14,6 +14,7 @@ import {
 
 
 import Link from "next/link";
+import { LinkItems } from "../constants/LinkItems";
 import Logo from "./Logo";
 
 const SocialButton = ({ children, label, href }) => {
@@ -63,18 +64,20 @@ export default function Footer() {
         <Logo />
 
         <Stack direction={"row"} spacing={6} >
-          <Link href={"/"} passHref>
-            <Text _hover={{ color: 'gray.600' }}>Anasayfa</Text>
-          </Link>
-          <Link href={"/hakkimizda"} passHref>
-            <Text _hover={{ color: 'gray.600' }}>Hakkımızda</Text>
-          </Link>
-          <Link href={"/foto-galeri"} passHref>
-            <Text _hover={{ color: 'gray.600' }}>Foto Galeri</Text>
-          </Link>
-          <Link href={"/iletisim"} passHref>
-            <Text _hover={{ color: 'gray.600' }}>İletişim</Text>
-          </Link>
+
+          {LinkItems.map((link, i) => (
+            <>
+              <Link key={i} href={link.href} passHref>
+                <Text
+                  as="span"
+                  _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
+                  cursor={"pointer"}
+                >
+                  {link.label}
+                </Text>
+              </Link>
+            </>
+          ))}
         </Stack>
 
       </Container>
@@ -96,7 +99,7 @@ export default function Footer() {
           <Text>
             &copy; {new Date().getFullYear()} Güven Otel. Tüm Hakları Saklıdır.
           </Text>
-          <Text>Desing By İlyas Bozdemir</Text>
+          <Text as={'small'}>Desing By İlyas Bozdemir</Text>
         </Container>
       </Box>
     </Box>

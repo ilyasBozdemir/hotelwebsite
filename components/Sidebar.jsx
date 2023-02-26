@@ -1,24 +1,11 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import { Box, CloseButton, Divider, Flex, Text } from "@chakra-ui/react";
-
-import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-} from "react-icons/fi";
+import { Box, CloseButton, Divider, Flex, Stack, Text } from "@chakra-ui/react";
+import { LinkItems } from '../constants/LinkItems'
 
 import NavLink from "./NavLink";
 import Logo from "./Logo";
-
-const LinkItems = [
-  { label: "Anasayfa", icon: FiHome, href: "/" },
-  { label: "Hakkımızda", icon: FiTrendingUp, href: "/hakkimizda" },
-  { label: "Foto Galeri", icon: FiCompass, href: "/foto-galeri" },
-  { label: "İletişim", icon: FiStar, href: "/iletisim" },
-];
 
 export default function Sidebar({ onClose, ...rest }) {
   const router = useRouter();
@@ -36,10 +23,12 @@ export default function Sidebar({ onClose, ...rest }) {
         <Logo />
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      <Divider/>
-      {LinkItems.map((link, i) => (
-        <NavLink key={i} link={link} />
-      ))}
+      <Divider />
+      <Stack>
+        {LinkItems.map((link, i) => (
+          <NavLink key={i} link={link} />
+        ))}
+      </Stack>
     </Box>
   );
 }

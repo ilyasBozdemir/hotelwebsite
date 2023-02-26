@@ -15,8 +15,17 @@ import Logo from "./Logo";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { LinkItems } from "../constants/LinkItems";
 
 export default function Header(props) {
+  const linkHoverStyles = {
+    transition: "transform 0.2s ease-in-out",
+    transform: "scale(1)",
+    _hover: {
+      color: "#fa3628",
+      transform: "scale(1.1)",
+    },
+  };
   return (
     <Stack
       direction={"column"}
@@ -29,6 +38,8 @@ export default function Header(props) {
       h={"auto"}
       bg={"white"}
       color={"black"}
+      boxShadow={'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'}
+
     >
       <Stack
         direction={"row"}
@@ -121,48 +132,26 @@ export default function Header(props) {
           direction={"row"}
           spacing={6}
         >
-          <Link href={"/"} passHref>
-            <Text
-              as="span"
-              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
-              cursor={"pointer"}
-              textTransform='uppercase'
-            >
-              Anasayfa
-            </Text>
-          </Link>
-          <Link href={"/hakkimizda"} passHref>
-            <Text
-              as="span"
-              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
-              cursor={"pointer"}
-              textTransform='uppercase'
-            >
-              Hakkımızda
-            </Text>
-          </Link>
-          <Link href={"/foto-galeri"} passHref>
-            <Text
-              as="span"
-              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
-              cursor={"pointer"}
-              textTransform='uppercase'
-            >
-              Foto Galeri
-            </Text>
-          </Link>
-          <Link href={"/iletisim"} passHref>
-            <Text
-              as="span"
-              _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
-              cursor={"pointer"}
-              textTransform='uppercase'
-            >
-              İletişim
-            </Text>
-          </Link>
+          {LinkItems.map((link, i) => (
+            <>
+              <Link key={i} href={link.href} passHref>
+                <Text
+                  as="span"
+                  _hover={{ color: '#fa3628' }}
+                  cursor={"pointer"}
+                  textTransform='uppercase'
+                  fontWeight={'semibold'}
+                  sx={linkHoverStyles}
+                >
+                  {link.label}
+                </Text>
+              </Link>
+            </>
+          ))}
+
         </Stack>
       </HStack>
     </Stack>
   );
 }
+
