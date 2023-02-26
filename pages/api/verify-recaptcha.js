@@ -3,7 +3,12 @@
 
 import axios from 'axios';
 
-import { RECAPTCHA_SECRET_KEY } from '../../constants/Site'
+import getConfig from 'next/config';
+
+const { serverRuntimeConfig } = getConfig();
+
+const reCAPTCHA_SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+const rECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {

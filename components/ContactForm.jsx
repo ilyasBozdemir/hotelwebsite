@@ -1,9 +1,11 @@
 import { Flex, FormControl, FormLabel, Input, Textarea, Button, HStack, Heading, Stack } from '@chakra-ui/react';
 import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { ReCAPTCHA_SITE_KEY, RECAPTCHA_SECRET_KEY } from '../constants/Site'
 
 export default function ContactForm() {
+
+    const reCAPTCHA_SITE_KEY = process.env.RECAPTCHA_SITE_KEY;
+    const rECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
     const [formData, setFormData] = React.useState({
         name: '',
         surname: '',
@@ -91,16 +93,15 @@ export default function ContactForm() {
                         </FormControl>
 
                         <FormControl>
-                            <ReCAPTCHA ref={recaptchaRef} sitekey={ReCAPTCHA_SITE_KEY} onChange={handleCaptchaChange} />
+                            <ReCAPTCHA ref={recaptchaRef} sitekey={reCAPTCHA_SITE_KEY} onChange={handleCaptchaChange} />
                         </FormControl>
                         <Button
                             mt={4} variant={'outline'}
                             colorScheme="red"
-                            data-sitekey={ReCAPTCHA_SITE_KEY}
-                            data-callback='handleSubmit'
-                            data-action='submit'
                             type='submit'
-                        >Gönder</Button>
+                        >
+                            Gönder
+                        </Button>
                     </Stack>
                 </>
             </Stack>

@@ -16,8 +16,7 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
           />
-          <script src="https://www.google.com/recaptcha/api.js"></script>
-          
+         
           <meta name="emotion-insertion-point" content="" />
           {emotionStyleTags}
 

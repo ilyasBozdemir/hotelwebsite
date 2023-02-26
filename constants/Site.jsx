@@ -1,2 +1,0 @@
-export const ReCAPTCHA_SITE_KEY = '6LfnlrUkAAAAAJMulQJD5oU_3_vj6Xrp-i_PUj6M'
-export const RECAPTCHA_SECRET_KEY = '6LfnlrUkAAAAAKr7ZwUui7k3tT4RyBJ7xxjdNWOq'

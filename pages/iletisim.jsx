@@ -65,7 +65,9 @@ export default function Contact() {
         <meta name="publisher" content="ilyas Bozdemir" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <script src="https://www.google.com/recaptcha/api.js?render=sitekey"></script>
 
+          
       </Head>
       <Header />
       <Stack>
