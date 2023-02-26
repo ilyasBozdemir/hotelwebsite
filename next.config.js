@@ -4,6 +4,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
+
+
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   images: {
@@ -12,6 +14,40 @@ module.exports = withBundleAnalyzer({
   productionBrowserSourceMaps: true,
   // publicRuntimeConfig: {},
   //serverRuntimeConfig: {},
+  async headers() {
+    return [
+      {
+        // Public assets
+        source: "/(.*).(png|jpg|jpeg|gif|webp|svg)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
+          },
+        ],
+      },
+      {
+        // Fonts
+        source: "/(.*).(woff|woff2|ttf|otf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
+          },
+        ],
+      },
+      {
+        // HTML pages
+        source: "/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
+          },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
