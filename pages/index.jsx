@@ -114,7 +114,7 @@ export default function Home({ message }) {
                 h={{ base: "350px", lg: "250px" }}
                 my={4}
               >
-                <Stack w={{ base: "full", lg: "45%" }}>
+                <Stack w={{ base: "full", lg: "70%" }}>
                   <Heading as="h2" size="xl">
                     İletişim Bilgileri
                   </Heading>
@@ -160,7 +160,7 @@ export default function Home({ message }) {
                     </HStack>
                   </Stack>
                 </Stack>
-                <Map />
+                <Map zoom={13}/>
               </Flex>
             </>
           </Stack>

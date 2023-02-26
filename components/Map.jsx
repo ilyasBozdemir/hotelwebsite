@@ -14,29 +14,29 @@ const Marker = dynamic(() => import('react-leaflet').then((mod) => mod.Marker), 
 const Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), {
     ssr: false,
 });
-function Map() {
+function Map({zoom=14}) {
     const [positions, setPositions] = React.useState([
-        [36.680261, 32.807540],
+        [36.680261, 32.807540],// Latitude and Longitude values
     ]);
     const [map, setMap] = React.useState(null);
     React.useEffect(() => {
         if (!map) {
             setMap(
-                <div >
-                    <MapContainer
-                        center={positions[0]}
-                        zoom={14}
-                        style={{ height: '100%', width: '100%' }}
-                        whenCreated={setMap}
-                    >
-                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                        {positions.map((position, index) => (
-                            <Marker key={index} position={position}>
-                                <Popup >Güven Otel</Popup>
-                            </Marker>
-                        ))}
-                    </MapContainer>
-                </div>
+                <MapContainer
+                    center={positions[0]}
+                    zoom={zoom}
+                    style={{ height: '100%', width: '100%' }}
+                    whenCreated={setMap}
+                >
+                    <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    {positions.map((position, index) => (
+                        <Marker key={index} position={position}>
+                            <Popup >Güven Otel</Popup>
+                        </Marker>
+                    ))}
+                </MapContainer>
             );
         }
     }, []);

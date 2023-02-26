@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "eslint": "8.34.0",
-    "eslint-config-next": "13.2.1"
+    "eslint-config-next": "13.2.1",
+    "webpack-bundle-analyzer": "^4.8.0"
   }
 }

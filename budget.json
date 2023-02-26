@@ -1,0 +1,10 @@
+{
+    "webpack": {
+      "bundlesize": {
+        "javascript": 300000,
+        "css": 50000,
+        "image": 150000
+      }
+    }
+  }
+  
