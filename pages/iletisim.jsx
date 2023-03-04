@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from "react";
 import Head from "next/head";
-import Header from "../components/Header";
 import {
   Stack,
   Flex,
@@ -9,14 +8,10 @@ import {
   Icon,
   Text,
   Box,
-} from "@chakra-ui/react";
-import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
 } from "@chakra-ui/react";
-
-
 
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -28,7 +23,7 @@ const Map = lazy(() => import("../components/Map"));
 
 export default function Contact() {
   const desc = `Güven Oteli'ne ulaşmak için farklı yöntemlerimiz bulunmaktadır. İletişim sayfamız üzerinden bize mesaj gönderebilir, adres, telefon ve e-posta bilgilerimizi öğrenebilirsiniz. En kısa sürede size yanıt vermekten memnuniyet duyacağız`;
-  const canonicalUrl = 'https://www.guvenotell.com/iletisim';
+  const canonicalUrl = "https://www.guvenotell.com/iletisim";
 
   return (
     <>
@@ -48,7 +43,10 @@ export default function Contact() {
           name="google-site-verification"
           content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
         />
-        <meta name="keywords" content="hotel contact, otel iletişim, ermenek otel iletişim, güneyyurt otel iletişim" />
+        <meta
+          name="keywords"
+          content="hotel contact, otel iletişim, ermenek otel iletişim, güneyyurt otel iletişim"
+        />
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
         <meta name="description" content={desc} />
@@ -61,13 +59,9 @@ export default function Contact() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <script src="https://www.google.com/recaptcha/api.js?render=sitekey"></script>
-
-          
       </Head>
-      <Header />
       <Stack>
-        <Stack direction={"column"} mt={20} >
-
+        <Stack direction={"column"} mt={6}>
           <Breadcrumb separator={<Icon as={IoMdArrowDropright} />}>
             <BreadcrumbItem>
               <>
@@ -85,7 +79,7 @@ export default function Contact() {
           <Stack>
             <>
               <Suspense fallback={<div>Loading...</div>}>
-                <Box zIndex={1} h={250} w={'100%'}>
+                <Box zIndex={1} h={300} w={"100%"}>
                   <Map />
                 </Box>
               </Suspense>
@@ -95,14 +89,24 @@ export default function Contact() {
                 w={"full"}
                 p={3}
                 m={5}
-                direction={{ base: 'column', md: 'row' }}
-                justifyContent={'space-between'}
+                direction={{ base: "column", md: "row" }}
+                justifyContent={"space-between"}
               >
                 <Stack
-                  boxShadow={'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'}
+                  boxShadow={
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+                  }
                   flexShrink={0}
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
                 >
-                  <Heading as="h6" size="md">
+                  <Heading
+                    as="h6"
+                    size="md"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="500"
+                  >
                     İletişim Bilgileri
                   </Heading>
                   <Stack
@@ -115,18 +119,18 @@ export default function Contact() {
                       <Icon as={FaMapMarkerAlt} />
 
                       <Link
-                        href={
-                          "https://goo.gl/maps/vUpGnwWD99PahxJJA"
-                        }
+                        href={"https://goo.gl/maps/vUpGnwWD99PahxJJA"}
                         legacyBehavior
                       >
                         <a target="_blank" rel="noopener noreferrer">
-                          <address itemscope itemtype="http://schema.org/addressRegion">
+                          <address
+                            itemscope
+                            itemtype="http://schema.org/addressRegion"
+                          >
                             <span itemprop="addressLocality">
                               Güneyyurt Kasabası Belediye Yanı Ermenek - KARAMAN
                             </span>
                           </address>
-
                         </a>
                       </Link>
                     </HStack>
@@ -134,7 +138,13 @@ export default function Contact() {
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905435403160"} legacyBehavior>
                         <a>
-                          <Text as='div' color={'blue.500'} fontWeight={'bold'} itemscope itemtype="http://schema.org/Organization">
+                          <Text
+                            as="div"
+                            color={"blue.500"}
+                            fontWeight={"bold"}
+                            itemscope
+                            itemtype="http://schema.org/Organization"
+                          >
                             <span itemprop="telephone">0543 540 31 60</span>
                           </Text>
                         </a>
@@ -144,7 +154,13 @@ export default function Contact() {
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905312486322"} legacyBehavior>
                         <a>
-                          <Text as='div' color={'blue.500'} fontWeight={'bold'} itemscope itemtype="http://schema.org/Organization">
+                          <Text
+                            as="div"
+                            color={"blue.500"}
+                            fontWeight={"bold"}
+                            itemscope
+                            itemtype="http://schema.org/Organization"
+                          >
                             <span itemprop="telephone">0531 248 63 22</span>
                           </Text>
                         </a>
@@ -153,10 +169,14 @@ export default function Contact() {
                   </Stack>
                 </Stack>
                 <Stack
-                  boxShadow={'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'}>
-                  <>
-                    <ContactForm />
-                  </>
+                  boxShadow={
+                    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+                  }
+                  data-aos="fade-left"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                >
+                  <ContactForm />
                 </Stack>
               </Flex>
             </>
@@ -166,4 +186,3 @@ export default function Contact() {
     </>
   );
 }
-

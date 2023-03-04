@@ -1,5 +1,15 @@
 import Head from "next/head";
-import { Center, Stack, Flex, Heading, HStack, Icon, Box, Image, Text, } from "@chakra-ui/react";
+import {
+  Center,
+  Stack,
+  Flex,
+  Heading,
+  HStack,
+  Icon,
+  Box,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import React, { Suspense } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -9,7 +19,7 @@ const Map = React.lazy(() => import("../components/Map"));
 
 export default function Home({ message }) {
   const desc = `Güven Otel, şık ve sade dekorasyonu ile dikkat çeker. 26 odalı otelimiz, sadece kat hizmeti sunarak konuklarımızın konforlu bir konaklama deneyimi yaşamasını sağlar`;
-  const canonicalUrl = 'https://www.guvenotell.com/';
+  const canonicalUrl = "https://www.guvenotell.com/";
   return (
     <>
       <Head>
@@ -28,7 +38,10 @@ export default function Home({ message }) {
           name="google-site-verification"
           content="nT-gjFplTL9A7HSiOVq0-yMDbLSEh6Nb-7UV2Jr4QAk"
         />
-        <meta name="keywords" content="hotel, otel, ermenek otel, güneyyurt otel" />
+        <meta
+          name="keywords"
+          content="hotel, otel, ermenek otel, güneyyurt otel"
+        />
 
         <meta itemprop="name" content="Güven Otel" />
         <meta itemprop="description" content={desc} />
@@ -54,12 +67,18 @@ export default function Home({ message }) {
                   maxW={"container.xl"}
                   boxShadow={"0 0 30px 0 rgb(33 30 25 / 10%)"}
                   spacing={10}
+                  data-aos="fade-down"
+                  data-aos-easing="linear"
+                  data-aos-duration="250"
                 >
-                  <Center>
-                    <Text colorScheme="blue" fontSize={30}  >
-                      Hakkımızda
-                    </Text>
-                  </Center>
+                  <Text
+                    as={Center}
+                    data-aos="fade-down"
+                    colorScheme="blue"
+                    fontSize={30}
+                  >
+                    Hakkımızda
+                  </Text>
                   <Stack
                     as={Flex}
                     bg={"white"}
@@ -71,6 +90,7 @@ export default function Home({ message }) {
                       boxShadow={"0 0 30px 0 rgb(33 30 25 / 20%)"}
                       border={"25px solid #fff"}
                       w={{ base: "full", lg: "40%" }}
+                      data-aos="zoom-in-right"
                     >
                       <Image
                         borderRounded={5}
@@ -79,10 +99,15 @@ export default function Home({ message }) {
                         draggable={false}
                         src="/images/giris.webp"
                         w={350}
-                        h={'auto'}
+                        h={"auto"}
                       />
                     </Box>
-                    <Box fontSize="18px" w={{ base: "full", lg: "50%" }} p={5}>
+                    <Box
+                      fontSize="18px"
+                      w={{ base: "full", lg: "50%" }}
+                      p={5}
+                      data-aos="zoom-in-left"
+                    >
                       <Heading
                         as="h2"
                         fontSize={20}
@@ -93,11 +118,12 @@ export default function Home({ message }) {
                       </Heading>
                       <Text>
                         Güneyyurt Kasabasında konuklarına rahat ve huzurlu bir
-                        konaklama deneyimi sunmak için tasarlanmış bir küçük otel.
-                        Otel, 26 yatak kapasitesine sahiptir ve konuklarının her
-                        türlü ihtiyacını karşılamak için temiz ve modern odalar
-                        sunuyor.Konumumuz Ermenek ilçesine 10 km,Turkuaz baraj gölüne 14 km,
-                        Devlet Hastanesine 12 km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.
+                        konaklama deneyimi sunmak için tasarlanmış bir küçük
+                        otel. Otel, 26 yatak kapasitesine sahiptir ve
+                        konuklarının her türlü ihtiyacını karşılamak için temiz
+                        ve modern odalar sunuyor.Konumumuz Ermenek ilçesine 10
+                        km,Turkuaz baraj gölüne 14 km, Devlet Hastanesine 12
+                        km,Ermenek Kapalı Cezaevine 13 km uzaklıktadır.
                       </Text>
                     </Box>
                   </Stack>
@@ -113,7 +139,11 @@ export default function Home({ message }) {
                 h={{ base: "350px", lg: "250px" }}
                 my={4}
               >
-                <Stack w={{ base: "full", lg: "70%" }}>
+                <Stack
+                  w={{ base: "full", lg: "70%" }}
+                  data-aos="fade-up"
+                  data-aos-duration="750"
+                >
                   <Heading as="h2" size="xl">
                     İletişim Bilgileri
                   </Heading>
@@ -123,7 +153,7 @@ export default function Home({ message }) {
                     justify={{ base: "space-between" }}
                     p={15}
                   >
-                    <HStack  _hover={{ color: 'gray.600' }}>
+                    <HStack _hover={{ color: "gray.600" }}>
                       <Icon as={FaMapMarkerAlt} />
 
                       <Link
@@ -137,21 +167,27 @@ export default function Home({ message }) {
                         </a>
                       </Link>
                     </HStack>
-                    <HStack  _hover={{ color: 'gray.600' }}>
+                    <HStack _hover={{ color: "gray.600" }}>
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905435403160"} legacyBehavior>
                         <a>
-                          <div itemscope itemtype="http://schema.org/Organization">
+                          <div
+                            itemscope
+                            itemtype="http://schema.org/Organization"
+                          >
                             <span itemprop="telephone">0543 540 31 60</span>
                           </div>
                         </a>
                       </Link>
                     </HStack>
-                    <HStack  _hover={{ color: 'gray.600' }}>
+                    <HStack _hover={{ color: "gray.600" }}>
                       <Icon as={BsFillTelephoneFill} />
                       <Link href={"tel:+905312486322"} legacyBehavior>
                         <a>
-                          <div itemscope itemtype="http://schema.org/Organization">
+                          <div
+                            itemscope
+                            itemtype="http://schema.org/Organization"
+                          >
                             <span itemprop="telephone">0531 248 63 22</span>
                           </div>
                         </a>
@@ -159,12 +195,10 @@ export default function Home({ message }) {
                     </HStack>
                   </Stack>
                 </Stack>
-                <Map zoom={13}/>
+                <Map zoom={13} />
               </Flex>
             </>
-            <>
-          
-            </>
+            <></>
           </Stack>
         </Suspense>
       </>

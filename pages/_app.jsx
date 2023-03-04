@@ -3,6 +3,8 @@ import Layout from "../layout/index";
 import theme from "../src/theme";
 import App from "next/app";
 import Page404 from "../components/Page404";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -18,21 +20,36 @@ class MyApp extends App {
       pageProps.statusCode = ctx.statusCode;
     }
 
+    // HSTS özelliğini etkinleştirin
+    if (ctx.res) {
+      ctx.res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+    }
+
     return { pageProps };
   }
 
   componentDidMount() {
-    // Bu, hydration hatasını önlemek için gerekli kod parçasıdır.
-    // İlk önce bir bileşen dinamik olarak yüklendiyse, hydrate edilmeli ve işleyicileri atamalıyız.
-    // Bu kod, özellikle getStaticProps/getServerSideProps ile oluşturulmuş bileşenler için gereklidir.
+
     if (typeof window !== "undefined") {
-      import("@chakra-ui/react").then(() => {
-        // Çoklu React render etme hatası önleme için:
-        // eslint-disable-next-line no-underscore-dangle
-        window._REACT_DEVTOOLS_GLOBAL_HOOK_.inject = function () {};
-      });
+      setTimeout(() => {
+        import("@chakra-ui/react").then(() => {
+          // Çoklu React render etme hatası önleme için:
+          // eslint-disable-next-line no-underscore-dangle
+          // window._REACT_DEVTOOLS_GLOBAL_HOOK_.inject = function () {};
+        });
+
+        AOS.init({
+          // Global settings
+          disable: false,
+          startEvent: 'DOMContentLoaded',
+          useClassNames: false,
+        });
+
+      }, 0);
     }
+
   }
+
 
   render() {
     const { Component, pageProps } = this.props;

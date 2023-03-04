@@ -28,24 +28,25 @@ export default function Header(props) {
   return (
     <Stack
       direction={"column"}
-      pos={"fixed"}
-      top={0}
-      left={0}
-      right={0}
+      //pos={"fixed"}
+      //top={0}
+      //left={0}
+      //right={0}
       zIndex={100}
       w={"full"}
       h={"auto"}
       bg={"white"}
       color={"black"}
       boxShadow={'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px'}
-
     >
+
       <Stack
         direction={"row"}
         spacing={6}
         as={Flex}
         justifyContent={"space-around"}
         fontSize={{ base: "12px", md: "15px" }}
+        my={1}
       >
         <>
           <HStack as={Link} href="tel:+905435403160" spacing={3} _hover={{ color: 'gray.600' }}>
@@ -158,6 +159,7 @@ export default function Header(props) {
         </Stack>
 
       </HStack>
+
     </Stack>
   );
 }

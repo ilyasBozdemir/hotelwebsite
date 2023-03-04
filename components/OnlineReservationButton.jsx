@@ -5,7 +5,6 @@ import { CiCalendarDate } from "react-icons/ci";
 const OnlineReservationButton = () => {
     return (
         <>
-
             <Link href={'/rezervasyon'} passHref >
                 <Button
                     leftIcon={<CiCalendarDate />}

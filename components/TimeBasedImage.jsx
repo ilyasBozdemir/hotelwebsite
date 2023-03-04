@@ -16,7 +16,9 @@ function TimeBasedImageTimeBasedImage({ nightImage, dayImage }) {
         src={imageUrl}
         alt="Guven-otel"
         width={1600}
-        height={1200} />
+        height={1200}
+        data-aos="zoom-in"
+      />
     </>
   );
 }

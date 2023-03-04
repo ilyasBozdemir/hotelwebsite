@@ -27,6 +27,7 @@ function Map({zoom=14}) {
                     zoom={zoom}
                     style={{ height: '100%', width: '100%' }}
                     whenCreated={setMap}
+                    scrollWheelZoom={false}
                 >
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

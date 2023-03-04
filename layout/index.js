@@ -4,7 +4,6 @@ import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { Box, Drawer, DrawerContent, useDisclosure, DrawerCloseButton } from "@chakra-ui/react";
 import React from "react";
 import Footer from "../components/Footer";
-import OnlineReservationButton from "../components/OnlineReservationButton";
 export default function Layout({ children }) {
 
   const [darkMode, setDarkMode] = React.useState(false);

@@ -1,16 +1,11 @@
-import {
-  Flex, Box
-} from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import TimeBasedImageTimeBasedImage from "./TimeBasedImage";
 
-import ReservationButton from "./ReservationButton";
-import { motion } from "framer-motion";
 function Hotel() {
   const date = new Date();
   const currentHour = date.getHours();
   const [bg, setBg] = useState(null);
-
 
   React.useEffect(() => {
     if (currentHour >= 6 && currentHour < 18) {
@@ -22,14 +17,12 @@ function Hotel() {
 
   return (
     <>
-
       <Flex alignItems="center" justifyContent="center" position="relative">
         <TimeBasedImageTimeBasedImage
           dayImage={"/images/otel-dis-gunduz.webp"}
           nightImage={"/images/otel-dis-gece.webp"}
         />
-        {
-          /* 
+        {/* 
             <Box
           position="absolute"
           top="0"
@@ -56,9 +49,7 @@ function Hotel() {
             </motion.div>
           </Box>
         </Box>
-           */
-        }
-     
+           */}
       </Flex>
     </>
   );

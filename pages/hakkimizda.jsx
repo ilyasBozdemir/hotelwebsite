@@ -36,7 +36,9 @@ export default function AboutUs() {
         justifyContent={{ base: 'flex-start', md: 'center' }}
         direction={'column'}
         boxShadow={{ md: '10px 10px 20px 0px rgba(0,0,0,0.75)' }}
-
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="600"
       >
         <Text fontSize={40} fontFamily={'"Times New Roman", Times, serif'}
           fontWeight={'semibold'} textAlign={{ base: 'flex-start', md: 'center' }}>Güven Otel</Text>
@@ -100,9 +102,7 @@ export default function AboutUs() {
       </Head>
       <>
         <Stack>
-          <Stack direction={"column"} mt={20} >
-
-
+          <Stack direction={"column"} mt={6} >
             <Breadcrumb separator={<Icon as={IoMdArrowDropright} />}>
               <BreadcrumbItem>
                 <BreadcrumbLink as={Link} href={"/"} legacyBehavior>
