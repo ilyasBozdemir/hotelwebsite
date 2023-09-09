@@ -17,7 +17,7 @@ export default function ReservationPage() {
         <meta name="twitter:title" content="Güven Otel" />
         <meta name="twitter:description" content={desc} />
 
-        <meta name="twitter:site" content="@Ilyasbzdmr70" />
+        <meta name="twitter:site" content="" />
         <meta name="og:title" content="Güven Otel" />
         <meta name="og:description" content={desc} />
         <meta name="og:type" content="website" />
