@@ -12,7 +12,6 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
-
 import Link from "next/link";
 import { LinkItems } from "../constants/LinkItems";
 import Logo from "./Logo";
@@ -20,12 +19,10 @@ import Logo from "./Logo";
 const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
-
-      bgGradient={
-        {
-          base: 'linear(to-r, gray.100, gray.400)',
-          md: 'linear(to-r, gray.200, gray.300)'
-        }}
+      bgGradient={{
+        base: "linear(to-r, gray.100, gray.400)",
+        md: "linear(to-r, gray.200, gray.300)",
+      }}
       rounded={"full"}
       w={8}
       h={8}
@@ -60,17 +57,18 @@ export default function Footer() {
         justify={"center"}
         align={"center"}
       >
-
         <Logo />
 
-        <Stack direction={"row"} spacing={6} >
-
+        <Stack direction={"row"} spacing={6}>
           {LinkItems.map((link, i) => (
             <>
               <Link key={i} href={link.href} passHref>
                 <Text
                   as="span"
-                  _hover={{ borderBottom: "3px solid #fa3628", color: 'gray.600' }}
+                  _hover={{
+                    borderBottom: "3px solid #fa3628",
+                    color: "gray.600",
+                  }}
                   cursor={"pointer"}
                 >
                   {link.label}
@@ -79,7 +77,6 @@ export default function Footer() {
             </>
           ))}
         </Stack>
-
       </Container>
 
       <Box
@@ -99,7 +96,30 @@ export default function Footer() {
           <Text>
             &copy; {new Date().getFullYear()} Güven Otel. Tüm Hakları Saklıdır.
           </Text>
-          <Text as={'small'}>Desing By İlyas Bozdemir</Text>
+
+          <HStack>
+            <Link
+              href={"https://appizsoft.com/ref=guvenotell.com"}
+              target={"_blank"}
+              passHref
+            >
+              {" "}
+              <img
+                src={"https://appizsoftcom.vercel.app/logo-mobile.png"}
+                width={20}
+              ></img>
+            </Link>
+            <Text as={"small"}>
+              <Link
+                href={"https://appizsoft.com/ref=guvenotell.com"}
+                target={"_blank"}
+                passHref
+              >
+                <>Appizsoft Yazılım</>
+              </Link>{" "}
+              tarafından geliştirilimiştir
+            </Text>
+          </HStack>
         </Container>
       </Box>
     </Box>
