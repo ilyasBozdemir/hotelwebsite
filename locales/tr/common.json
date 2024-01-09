@@ -1,0 +1,16 @@
+{
+  "welcome": "Hoş geldiniz",
+  "greeting": "Merhaba, {{name}}!",
+  "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
+  "logout": "Çıkış Yap",
+  "signIn": "Kayıt Ol",
+  "navs": {
+    "home": "Ana Sayfa",
+    "about": "Hakkında",
+    "pricing": "Fiyatlandırma",
+    "community": "Topluluk",
+    "features": "Özellikler",
+    "documentation": "Dökümantasyon",
+    "blog": "Blog"
+  }
+}

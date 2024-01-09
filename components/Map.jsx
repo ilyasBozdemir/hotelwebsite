@@ -2,6 +2,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
+
 const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), {
     ssr: false,
 });
@@ -16,7 +17,7 @@ const Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), {
 });
 function Map({zoom=14}) {
     const [positions, setPositions] = React.useState([
-        [36.680261, 32.807540],// Latitude and Longitude values
+        [36.680261, 32.807540], 
     ]);
     const [map, setMap] = React.useState(null);
     React.useEffect(() => {

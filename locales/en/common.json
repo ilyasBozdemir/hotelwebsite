@@ -1,0 +1,16 @@
+{
+  "welcome": "Welcome",
+  "greeting": "Hello, {{name}}!",
+  "error": "An error occurred. Please try again later.",
+  "logout": "Logout",
+  "signIn": "Sign in",
+  "navs": {
+    "home": "Home",
+    "about": "About",
+    "pricing": "Pricing",
+    "community": "Community",
+    "features": "Features",
+    "documentation": "Documentation",
+    "blog": "Blog"
+  }
+}
