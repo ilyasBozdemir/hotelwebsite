@@ -43,8 +43,6 @@ export default function Layout({ children }) {
         </DrawerContent>
       </Drawer>
 
-      {/*= Header =*/}
-
       <Navbar onOpen={onOpen} />
 
       <Box ml={{ base: 0, md: 0 }}>
