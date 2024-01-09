@@ -25,17 +25,3 @@ export default class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async (ctx) => {
-  const originalRenderPage = ctx.renderPage;
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App) =>
-        function EnhanceApp(props) {
-          return <App {...props} />;
-        },
-    });
-  const initialProps = await Document.getInitialProps(ctx);
-  return {
-    ...initialProps,
-  };
-};
