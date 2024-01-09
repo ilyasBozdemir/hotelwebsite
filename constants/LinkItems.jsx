@@ -11,6 +11,7 @@ import {
 import {
   GrContactInfo
 } from "react-icons/gr";
+
 export const LinkItems = [
   {
     label: "Anasayfa",

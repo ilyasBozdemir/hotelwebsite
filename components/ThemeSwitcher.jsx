@@ -1,8 +1,8 @@
-import { Icon, IconButton, useColorMode, Tooltip } from "@chakra-ui/react";
+import { Icon, IconButton, useColorMode, Tooltip, useColorModeValue } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
-function ThemeSwitcher() {
+function ThemeSwitcher({svgColor}) {
   const { colorMode, toggleColorMode } = useColorMode();
   const [darkIcon, setDarkIcon] = useState(BsMoon);
   const [lightIcon, setLightIcon] = useState(BsSun);
@@ -42,9 +42,14 @@ function ThemeSwitcher() {
     <>
       <IconButton
         id={"theme-switcher"}
+        color={svgColor}
         aria-label="Color Switcher"
-        variant={"ghost"}
+        variant={"none"}
         onClick={handleToggleColorMode}
+        _hover={{
+          cursor: "pointer",
+          color: useColorModeValue("#fa3628", "#fa3623"),
+        }}
         icon={
           <Icon
             variant={"ghost"}

@@ -41,6 +41,7 @@ export default function Header(props) {
     >
 
       <Stack
+      display={'none'}
         direction={"row"}
         spacing={6}
         as={Flex}
@@ -88,7 +89,7 @@ export default function Header(props) {
           </HStack>
         </>
       </Stack>
-      <Divider orientation='horizontal' bg={'#f70f4d'} />
+      <Divider display={'none'} orientation='horizontal' bg={'#f70f4d'} />
       <HStack
         as={Flex}
         h={10}
